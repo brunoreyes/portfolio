@@ -12,6 +12,11 @@ import {
   Tabs,
   Tab,
   Typography,
+  GridList,
+  GridListTile,
+  GridListTileBar,
+  withTheme,
+  TextareaAutosize,
   // IconButton,
 } from '@material-ui/core';
 // import WorkIcon from '@material-ui/icons/Work';
@@ -25,110 +30,42 @@ import Fade from 'react-reveal/Fade';
 // import LockIcon from '@material-ui/icons/Lock';
 
 const styles = (theme) => ({
-  // allContainer: {},
-  // leftSide: { 'background-color': '#161616', flexGrow: 1, height: 860 },
-  // rightSide: { 'background-color': 'white', flexGrow: 1, height: 860 },
-  // infinityIcon: {
-  //   color: '#ffffff',
-  //   // justify: 'center',
-  //   // 'text-align': 'center',
-  //   alignContent: 'center',
-  //   alignItems: 'center',
-  //   // width: 'auto',
-  //   width: '100%',
-  //   // height: '100%',
-  //   // 'text-align': 'center',
-  //   margin: '90px auto 20px auto',
-  //   // display: 'inline-block',
-  //   'font-size': '500px',
-
-  //   display: 'block',
+  // optionTabs: {
+  //   borderBottom: '2px solid #ffffff',
+  //   textAlign: 'center',
+  //   transition: '.5s',
   // },
-  // padding: {
-  //   padding: theme.spacing(3),
-  // },
-  // infinityControl: { 'text-align': 'center', width: 'auto' },
-  // infinitytext: {
-  //   font: '500 30px Montserrat, sans-serif',
-  //   color: 'white',
-  //   margin: '-100px auto 20px auto',
-  // },
-  // formContainer: {
-  //   'background-color': 'white',
-  //   'text-align': 'center',
-  // },
-  // logoControl: {
-  //   font: '700 50px Montserrat, sans-serif',
-  //   margin: '0px 0px 20px 0px',
-  // },
-  // formControl: { margin: '0px 0px 15px 0px', width: '100%' },
-  // inputControl: { margin: '0px 0px 15px 0px', width: '100%' },
-  // inputLabel: {
-  //   font: '  500 15px Montserrat, sans-serif',
-  // },
-  // inputHelper: { font: '500 12px Montserrat, sans-serif' },
-  // submitButton: {
-  //   color: '#fff',
-  //   'background-color': '#161616',
-  //   'font-size': '15px',
-  //   'font-family': ' Montserrat',
-  //   'text-transform': 'capitalize',
-  //   border: '#161616 solid 1px',
-  //   margin: '10px 0px 80px 0px',
-  //   padding: '8px 16px 8px 16px',
-  //   'border-radius': '25px',
+  // optionTab: {
+  //   textTransform: 'capitalize',
+  //   textAlign: 'center',
+  //   minWidth: '16%', // a number of your choice
+  //   width: '16%',
+  //   maxWidth: 40,
+  //   font: '400 14px Montserrat, sans-serif',
   //   '&:hover': {
   //     color: '#161616',
-  //     'background-color': '#fff',
-  //     border: '#161616 solid 1px',
+  //     opacity: 1,
+  //     transition: '.5s',
+  //     borderBottom: '#161616 solid 2px',
+  //     position: 'relative',
+  //     font: '500 14px Montserrat, sans-serif',
   //   },
-  //   'text-align': 'center',
-  //   width: '100%',
-  //   alignContent: 'center',
-  //   alignItems: 'center',
+  //   // So focus only works until you click something else
+  //   '&:focus': {
+  //     color: '#161616',
+  //     font: '500 14px Montserrat, sans-serif',
+  //     borderBottom: '#161616 solid 2px',
+  //     opacity: 1,
+  //     // transition: '.5s',
+  //   },
+  //   '&:not(focus)': {
+  //     color: '#525459',
+  //     font: '500 14px Montserrat, sans-serif',
+  //     borderBottom: '#b8b8b8 solid 2px',
+  //     opacity: 1,
+  //     transition: '.5s',
+  //   },
   // },
-  // register: {
-  //   'text-align': 'center',
-  //   margin: '0px 0px 0px 0px',
-  //   font: '500 15px Montserrat, sans-serif',
-  //   color: '#161616',
-  // },
-  optionTabs: {
-    borderBottom: '2px solid #ffffff',
-    textAlign: 'center',
-    transition: '.5s',
-  },
-  optionTab: {
-    textTransform: 'capitalize',
-    textAlign: 'center',
-    minWidth: '16%', // a number of your choice
-    width: '16%',
-    maxWidth: 40,
-    font: '400 14px Montserrat, sans-serif',
-    '&:hover': {
-      color: '#161616',
-      opacity: 1,
-      transition: '.5s',
-      borderBottom: '#161616 solid 2px',
-      position: 'relative',
-      font: '500 14px Montserrat, sans-serif',
-    },
-    // So focus only works until you click something else
-    '&:focus': {
-      color: '#161616',
-      font: '500 14px Montserrat, sans-serif',
-      borderBottom: '#161616 solid 2px',
-      opacity: 1,
-      // transition: '.5s',
-    },
-    '&:not(focus)': {
-      color: '#525459',
-      font: '500 14px Montserrat, sans-serif',
-      borderBottom: '#b8b8b8 solid 2px',
-      opacity: 1,
-      transition: '.5s',
-    },
-  },
   root: {
     flexGrow: 1,
   },
@@ -144,25 +81,144 @@ const styles = (theme) => ({
     // width: '100%',
   },
   socialIconsContainer: {
+    color: '#252525',
+    // opacity: '1',
+    // backgroundColor: '#eeeeee',
+    // color: '#252525',
+    width: 'fit-content',
+    height: '30px',
+    margin: 'auto',
+    display: 'flex',
+    'text-align': 'center',
+    '&:hover > div': {
+      // color: '#eeeee',
+      opacity: 0.5,
+      transition: '.5s',
+      position: 'relative',
+    },
+    '&:hover > div:hover': {
+      // color: '#eeeee',
+      opacity: 1,
+      transition: '.5s',
+      position: 'relative',
+    },
+  },
+  linkedinSocialIconContainer: { marginTop: '-4px' },
+  githubSocialIcons: {
+    'font-size': '30px',
+    display: 'inline-block',
+  },
+  linkedinSocialIcons: {
+    'font-size': '40px',
+    display: 'inline-block',
     // '&:hover': {
-    //   color: '#161616',
-    //   opacity: 1,
-    //   transition: '.5s',
-    //   position: 'relative',
+    //   color: '#252525',
+    //   opacity: '1',
     // },
   },
-  socialIcons: {
+  introduction: {
+    'text-align': 'justify',
+    color: '#262a30',
+    font: '500 50px Montserrat, sans-serif',
+    padding: '0px 20px 0px 20px',
+  },
+
+  story: {
+    color: '#262a30',
+    font: '500 20px Hind, sans-serif',
+    padding: '0px 20px 0px 20px',
+    marginTop: '-80px',
+    'text-align': 'left',
+  },
+  projectsHeader: {
+    color: '#262a30',
+    marginTop: '30px',
+    font: '500 50px Montserrat, sans-serif',
+    // fontWeight: 'bold',
+  },
+  logoPicture: { width: '50px', marginBottom: '-10px' },
+  underline: { 'text-decoration': 'underline' },
+  projectContainerOne: {
+    marginTop: '150px',
+    padding: '10px 20px 0px 20px',
+  },
+  projectContainerTwo: {
+    marginTop: '75px',
+    padding: '10px 20px 0px 20px',
+  },
+  projectContainerThree: {
+    marginTop: '0px',
+    padding: '10px 20px 0px 20px',
+  },
+  projectPicture: {
+    width: '100%',
+    'border-radius': '5px',
+  },
+  projectPaper: {
     '&:hover': {
-      color: '#2196f3',
-    },
-    '&:not(hover)': {
-      color: '#808080',
-      color: '#161616',
-      // opacity: 1,
+      opacity: 1,
+      backgroundColor: 'white',
+      border: '#161616 solid 2px',
     },
   },
-  introduction: { color: '#262a30', font: '500 50px Montserrat, sans-serif' },
-  story: { color: '#525459', font: '500 14px Montserrat, sans-serif' },
+  projectContainerBottom: { borderBottom: '#161616 solid 4px' },
+
+  GridListRoot: {
+    display: 'grid',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    alignItems: 'flex-end',
+    // borderRight: '#9898a4 solid 5px',
+  },
+  gridList: {
+    width: 600,
+    height: 460,
+    transform: 'translateZ(0)',
+    flexWrap: 'nowrap',
+    // 'overflow-y': 'scroll !important',
+    height: '102%',
+    // overflow: 'visible',
+
+    '&::-webkit-scrollbar': {
+      width: '.5em',
+      height: '3%',
+      // height: '100vh',
+      marginBottom: '10px',
+      position: 'relative',
+    },
+    '&::-webkit-scrollbar-track': {
+      // boxShadow: 'inset 0 0 6px #000',
+      // border: '#252525 solid 1px',
+      backgroundColor: '#eeeeee',
+      // 'border-radius': '5px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: '#262b2f',
+      // 'border-radius': '5px',
+    },
+  },
+  gridListItem: {},
+  arrow: {
+    width: '430px',
+    margin: '50px auto',
+  },
+  line: {
+    'margin-top': '14px',
+    width: '400px',
+    background: 'blue',
+    height: '10px',
+    float: 'left',
+  },
+  point: {
+    width: '0',
+    height: '0',
+    'border-top': '20px solid transparent',
+    'border-bottom': '20px solid transparent',
+    'border-left': '30px solid blue',
+    float: 'right',
+  },
+  arrowPicture: { margin: '-130px 0px 0px 30px', width: '550px' },
 });
 
 class HomePage extends Component {
@@ -186,80 +242,102 @@ class HomePage extends Component {
     return (
       <div className={classes.root}>
         <Grid container justify="space-around" spacing={0}>
-          {/* <Grid className={classes.spacing} item xs={1} sm={1} md={1} lg={1}>
-            <div />
-          </Grid> */}
           <Grid item className={classes.content} xs={12} sm={12} md={6} lg={6}>
             <h1 className={classes.introduction}>
-              {/* <img src="/public/images/brLogo.png"></img>
-              <img src="https://tinyurl.com/yyu4pp2p"></img>
-              <img src="https://tinyurl.com/y3khej25.com/yyu4pp2p"></img> */}
-              Hey, I'm Bruno.
+              {/* I uploaded images via the images folder and accessed their links through Github */}
+              {/* <img
+                className={classes.logoPicture}
+                src="https://tinyurl.com/yxnwsqfk"
+              ></img>{' '} */}
+              Hola, I'm Bruno.
             </h1>
             <p className={classes.story}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br></br> <br></br>I'm a software developer at Prime Digital
+              Academy based in the Twin Cities that likes drinking tea, playing
+              chess, exploring and sharing ideas. I have created projects using
+              React, Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL,
+              jQuery, AWS S3, and CSS. Prior to my time in tech, I worked in UX
+              and marketing for 3+ years, creating websites, social media
+              platforms, branding kits, promotional campaigns, creative content,
+              memos, and research reports. I choose to learn full-stack
+              development to be able to build out my user-centered designs into
+              fully functional applications and to learn how my designs affect
+              developers and stakeholders alike. <br></br> <br></br>
+              Feel free to download my <span> </span>{' '}
+              <span className={classes.underline}>resume</span>
+              <span> </span> or send me an <span> </span>{' '}
+              <span className={classes.underline}>email</span> if you have any
+              questions or want to set up a time to chat.<br></br> <br></br>
             </p>
             <div className={classes.socialIconsContainer}>
-              {' '}
-              <GitHubIcon className={classes.socialIcons} />
-              <LinkedInIcon className={classes.socialIcons} />
+              <div>
+                <GitHubIcon className={classes.githubSocialIcons} />
+              </div>
+
+              <div className={classes.linkedinSocialIconContainer}>
+                <LinkedInIcon className={classes.linkedinSocialIcons} />
+              </div>
             </div>
           </Grid>
           <Grid item className={classes.content} xs={12} sm={12} md={6} lg={6}>
-            <div></div>
-
-            {/* <div className={classes.tabsContainer}>
-              <Tabs
-                // className={classes.content}
-                className={classes.optionTabs}
-                // value={value}
-                // onChange={handleChange}
+            <h1 className={classes.projectsHeader}>
+              {' '}
+              <img
+                className={classes.logoPicture}
+                src="https://tinyurl.com/yxnwsqfk"
+              ></img>{' '}
+              Projects
+            </h1>
+            <div className={classes.GridListRoot}>
+              {/* cellHeight controls the height of each tile */}
+              <GridList
+                cols={1.5}
+                cellHeight={360}
+                className={classes.gridList}
               >
-                <Tab
-                  // icon={<WorkIcon />}
-                  disableRipple
-                  className={classes.optionTab}
-                  label="Projects"
-                  onClick={this.handleOptionClick}
-                />
-                {/* <Tab
-                  disableRipple
-                  icon={<ImageIcon />}
-                  className={classes.optionTab}
-                /> */}
-            {/* <Tab
-                  // icon={<EmailIcon />}
-                  disableRipple
-                  // { this.state.options ? (className = {classes.contactSelected}) : (className = {classes.contact})}
-                  className={classes.optionTab}
-                  label="Contact"
-                  onClick={this.handleOptionClick}
-                />
-              </Tabs>
-              <Typography className={classes.padding} />
-            // </div> */}
+                <GridListTile>
+                  <div className={classes.projectContainerOne}>
+                    <Paper
+                      className={classes.projectContainerBottom}
+                      className={classes.projectPaper}
+                    >
+                      <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yxdammdx"
+                      ></img>
+                    </Paper>
+                  </div>
+                </GridListTile>
+                <GridListTile cols={1}>
+                  <div className={classes.projectContainerTwo}>
+                    <Paper className={classes.projectPaper} elevation={3}>
+                      <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yyu4pp2p"
+                      ></img>
+                    </Paper>
+                  </div>
+                </GridListTile>
+                <GridListTile>
+                  <div className={classes.projectContainerThree}>
+                    <Paper className={classes.projectPaper} elevation={3}>
+                      <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yyd7ffm7"
+                      ></img>
+                    </Paper>
+                  </div>
+                </GridListTile>
+              </GridList>
+              {/* <img src="images/arrow.png"></img> */}
+              {/* <img className={classes.arrowPicture} src="images/2.png"></img> */}
+
+              {/* <div className={classes.arrow}>
+                <div className={classes.line}></div>
+                <div className={classes.point}></div>
+              </div> */}
+            </div>
           </Grid>
-          {/* <Grid className={classes.spacing} item xs={1} sm={1} md={1} lg={1}> */}
-          {/* <div /> */}
-          {/* </Grid> */}
-          {/* <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
-          </Grid> */}
         </Grid>
       </div>
     );
@@ -267,84 +345,3 @@ class HomePage extends Component {
 }
 
 export default withStyles(styles)(HomePage);
-
-// <Grid container spacing={24}>
-//   <Grid className={classes.leftSide} item xs={6}>
-//     <div className={classes.infinityControl}>
-//       <Fade>
-//         <AllInclusiveIcon className={classes.infinityIcon} />{' '}
-//       </Fade>
-//       <p className={classes.infinitytext}>It Means Everything</p>
-//     </div>
-//   </Grid>
-//   <Grid className={classes.rightSide} item xs={6}>
-//     <div className="loginPage">
-//       <form
-//         className={classes.formContainer}
-//         onSubmit={this.login}
-//         autocomplete="off"
-//       >
-//         <h2 className={classes.logoControl}>TODO</h2>
-//         <FormControl className={classes.formControl}>
-//           <div>
-//             <InputLabel className={classes.inputLabel} htmlFor="username">
-//               Username
-//               {/* Username */}
-//             </InputLabel>
-//             <Input
-//               type="text"
-//               name="username"
-//               className={classes.inputControl}
-//               value={this.state.username}
-//               onChange={this.handleInputChangeFor('username')}
-//             />
-//             <FormHelperText className={classes.inputHelper}>
-//               Required *
-//             </FormHelperText>
-//           </div>
-//         </FormControl>
-//         <FormControl className={classes.formControl}>
-//           <div>
-//             <InputLabel className={classes.inputLabel} htmlFor="password">
-//               Password
-//               {/* Password */}
-//             </InputLabel>
-//             <Input
-//               type="password"
-//               name="password"
-//               className={classes.inputControl}
-//               value={this.state.password}
-//               onChange={this.handleInputChangeFor('password')}
-//             />
-//             <FormHelperText className={classes.inputHelper}>
-//               Required *
-//             </FormHelperText>
-//           </div>
-//         </FormControl>
-
-//         <div>
-//           <Button
-//             disableElevation
-//             className={classes.submitButton}
-//             // className="log-in"
-//             type="submit"
-//             name="submit"
-//             value="Log In"
-//           >
-//             Submit
-//           </Button>
-//           <Link
-//             className={classes.register}
-//             type="button"
-//             // className="link-button"
-//             onClick={() => {
-//               this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' });
-//             }}
-//           >
-//             Register
-//           </Link>
-//         </div>
-//       </form>
-//     </div>
-//   </Grid>
-// </Grid>
