@@ -138,30 +138,99 @@ const styles = (theme) => ({
   },
   logoPicture: { width: '50px', marginBottom: '-10px' },
   underline: { 'text-decoration': 'underline' },
+  gridListTile: {
+    '&:hover': {
+      // opacity: 1,
+      backgroundColor: 'white',
+      color: 'white',
+      '&:hover > div:hover': {
+        img: 'white',
+        // color: 'white',
+        backgroundColor: 'white',
+        'text-decoration': 'none',
+      },
+    },
+  },
   projectContainerOne: {
-    marginTop: '150px',
+    margin: '10px 0px 20px 0px',
     padding: '10px 20px 0px 20px',
+    '&:hover': {
+      backgroundColor: 'white',
+      color: 'white',
+      '&:hover > div:hover': {
+        color: 'white',
+      },
+    },
   },
   projectContainerTwo: {
-    marginTop: '75px',
+    marginTop: '-30px',
     padding: '10px 20px 0px 20px',
   },
   projectContainerThree: {
     marginTop: '0px',
     padding: '10px 20px 0px 20px',
   },
+  imageTextContainer: {
+    '&:hover > div': {
+      opacity: 1,
+      border: '#161616 solid 3px',
+      // 'border-radius': '5px',
+    },
+    position: 'relative',
+    // width: '50%',
+  },
   projectPicture: {
     width: '100%',
-    'border-radius': '5px',
+  },
+  overlay: {
+    opacity: 1,
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: '0',
+    right: '0',
+    height: '100%',
+    width: '100%',
+    opacity: '0',
+    transition: '.5s ease',
+    // 'background-color': '#252525',
+    'background-color': 'white',
+    padding: '0px 0px 0px 0px',
+  },
+  imageText: {
+    color: 'white',
+    color: '#252525',
+    font: '500 22px Montserrat, sans-serif',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    '-webkit-transform': 'translate(-50%, -50%)',
+    '-ms-transform': 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -50%)',
+    // 'text-align': 'center',
+  },
+  hrefLink: { 'text-decoration': 'none' },
+  projectSocialIcon: { 'font-size': '50px', paddingTop: '10px' },
+  projectTitle: {
+    marginTop: '30px',
+    padding: '10px 20px 10px 20px',
+    marginBottom: '0px',
+  },
+  projectDescription: {
+    paddingTop: '0px',
+    paddingBottom: '15px',
+    // marginTop
+    marginTop: '7px',
   },
   projectPaper: {
+    'border-radius': '0px',
+    // border: '#161616 solid 2px',
     '&:hover': {
       opacity: 1,
       backgroundColor: 'white',
-      border: '#161616 solid 2px',
+      // border: '#161616 solid 2px',
     },
   },
-  projectContainerBottom: { borderBottom: '#161616 solid 4px' },
 
   GridListRoot: {
     display: 'grid',
@@ -173,13 +242,11 @@ const styles = (theme) => ({
   },
   gridList: {
     width: 600,
-    height: 460,
+    height: 500,
     transform: 'translateZ(0)',
     flexWrap: 'nowrap',
     // 'overflow-y': 'scroll !important',
     height: '102%',
-    // overflow: 'visible',
-
     '&::-webkit-scrollbar': {
       width: '.5em',
       height: '3%',
@@ -198,27 +265,6 @@ const styles = (theme) => ({
       // 'border-radius': '5px',
     },
   },
-  gridListItem: {},
-  arrow: {
-    width: '430px',
-    margin: '50px auto',
-  },
-  line: {
-    'margin-top': '14px',
-    width: '400px',
-    background: 'blue',
-    height: '10px',
-    float: 'left',
-  },
-  point: {
-    width: '0',
-    height: '0',
-    'border-top': '20px solid transparent',
-    'border-bottom': '20px solid transparent',
-    'border-left': '30px solid blue',
-    float: 'right',
-  },
-  arrowPicture: { margin: '-130px 0px 0px 30px', width: '550px' },
 });
 
 class HomePage extends Component {
@@ -252,17 +298,18 @@ class HomePage extends Component {
               Hola, I'm Bruno.
             </h1>
             <p className={classes.story}>
-              <br></br> <br></br>I'm a software developer at Prime Digital
-              Academy based in the Twin Cities that likes drinking tea, playing
-              chess, exploring and sharing ideas. I have created projects using
-              React, Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL,
-              jQuery, AWS S3, and CSS. Prior to my time in tech, I worked in UX
-              and marketing for 3+ years, creating websites, social media
-              platforms, branding kits, promotional campaigns, creative content,
-              memos, and research reports. I choose to learn full-stack
-              development to be able to build out my user-centered designs into
-              fully functional applications and to learn how my designs affect
-              developers and stakeholders alike. <br></br> <br></br>
+              <br></br> <br></br>I'm a mexican-american software developer at
+              Prime Digital Academy based in the Twin Cities. I have created
+              projects using React, Redux, Sagas, Node.js, Ajax, Express,
+              PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to my time in
+              tech, I worked in UX and marketing for 3+ years, creating
+              websites, social media platforms, branding kits, promotional
+              campaigns, creative content, memos, and research reports. I chose
+              to learn full-stack development to be able to build out my
+              user-centered designs into fully functional applications and to
+              learn how my designs affect developers and stakeholders alike.
+              When I'm not creating or designing products I enjoy exploring and
+              sharing ideas. <br></br> <br></br>
               Feel free to download my <span> </span>{' '}
               <span className={classes.underline}>resume</span>
               <span> </span> or send me an <span> </span>{' '}
@@ -281,7 +328,6 @@ class HomePage extends Component {
           </Grid>
           <Grid item className={classes.content} xs={12} sm={12} md={6} lg={6}>
             <h1 className={classes.projectsHeader}>
-              {' '}
               <img
                 className={classes.logoPicture}
                 src="https://tinyurl.com/yxnwsqfk"
@@ -292,21 +338,45 @@ class HomePage extends Component {
               {/* cellHeight controls the height of each tile */}
               <GridList
                 cols={1.5}
-                cellHeight={360}
+                cellHeight={370}
                 className={classes.gridList}
               >
-                <GridListTile>
-                  <div className={classes.projectContainerOne}>
-                    <Paper
-                      className={classes.projectContainerBottom}
-                      className={classes.projectPaper}
-                    >
-                      <img
-                        className={classes.projectPicture}
-                        src="https://tinyurl.com/yxdammdx"
-                      ></img>
-                    </Paper>
-                  </div>
+                <GridListTile className={classes.gridListTile}>
+                  <a
+                    href="https://github.com/brunoreyes/TODO-app"
+                    target="_blank"
+                    className={classes.hrefLink}
+                  >
+                    <div className={classes.projectContainerOne}>
+                      <Paper elevation={3} className={classes.projectPaper}>
+                        {/* <Button> */}
+                        <div className={classes.imageTextContainer}>
+                          <h3 className={classes.projectTitle}>TODO</h3>
+                          {/* <div className={classes.imageTextContainer}> */}
+                          <img
+                            className={classes.projectPicture}
+                            src="https://tinyurl.com/yxdammdx"
+                          ></img>
+                          <div className={classes.overlay}>
+                            <div className={classes.imageText}>
+                              View Project on
+                              <GitHubIcon
+                                className={classes.projectSocialIcon}
+                              />
+                              {/* <GitHubIcon /> */}
+                            </div>
+                          </div>
+                          {/* </div> */}
+
+                          <p className={classes.projectDescription}>
+                            Spanish for 'all', TODO is an application that
+                            allows users to manage all of their tasks,
+                            reminders, ideas, and memories.
+                          </p>
+                        </div>
+                      </Paper>
+                    </div>
+                  </a>
                 </GridListTile>
                 <GridListTile cols={1}>
                   <div className={classes.projectContainerTwo}>
@@ -329,13 +399,22 @@ class HomePage extends Component {
                   </div>
                 </GridListTile>
               </GridList>
-              {/* <img src="images/arrow.png"></img> */}
-              {/* <img className={classes.arrowPicture} src="images/2.png"></img> */}
-
-              {/* <div className={classes.arrow}>
-                <div className={classes.line}></div>
-                <div className={classes.point}></div>
-              </div> */}
+              {/* <GridListTile>
+                  <div className={classes.projectContainerOne}>
+                    <Paper
+                      elevation={3}
+                      // className={classes.projectContainerBottom}
+                      className={classes.projectPaper}
+                    >
+                      {/* <Button> */}
+              {/* <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yxdammdx"
+                      ></img>
+                      {/* </Button> */}
+              {/*}  </Paper>
+                  </div>
+                </GridListTile>  */}
             </div>
           </Grid>
         </Grid>
