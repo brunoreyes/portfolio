@@ -1,0 +1,30 @@
+.form-control {
+  margin-top: -20px;
+  padding-top: 200px;
+  width: 230%;
+  /* position: 'relative'; */
+  text-align: center;
+  margin: 'auto';
+}
+
+.form-group {
+  margin-top: 0px;
+  padding-bottom: 10px;
+  width: 80%;
+  text-align: center;
+  margin: 'auto';
+  /* position: 'relative'; */
+}
+
+.form-controller {
+  padding-bottom: 10px;
+  text-align: center;
+  width: fit-content;
+}
+
+.form-header {
+  margin: -25px 100px 20px 0px;
+  font-size: 25px;
+  font-family: Montserrat;
+  font-weight: 600;
+}

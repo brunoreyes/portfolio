@@ -7,6 +7,7 @@ import {
   FormHelperText,
   Button,
   Link,
+  Form,
   Paper,
   Grid,
   Tabs,
@@ -28,44 +29,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Fade from 'react-reveal/Fade';
 // import PersonIcon from '@material-ui/icons/Person';
 // import LockIcon from '@material-ui/icons/Lock';
+import { Container } from '../Container/Container';
 
 const styles = (theme) => ({
-  // optionTabs: {
-  //   borderBottom: '2px solid #ffffff',
-  //   textAlign: 'center',
-  //   transition: '.5s',
-  // },
-  // optionTab: {
-  //   textTransform: 'capitalize',
-  //   textAlign: 'center',
-  //   minWidth: '16%', // a number of your choice
-  //   width: '16%',
-  //   maxWidth: 40,
-  //   font: '400 14px Montserrat, sans-serif',
-  //   '&:hover': {
-  //     color: '#161616',
-  //     opacity: 1,
-  //     transition: '.5s',
-  //     borderBottom: '#161616 solid 2px',
-  //     position: 'relative',
-  //     font: '500 14px Montserrat, sans-serif',
-  //   },
-  //   // So focus only works until you click something else
-  //   '&:focus': {
-  //     color: '#161616',
-  //     font: '500 14px Montserrat, sans-serif',
-  //     borderBottom: '#161616 solid 2px',
-  //     opacity: 1,
-  //     // transition: '.5s',
-  //   },
-  //   '&:not(focus)': {
-  //     color: '#525459',
-  //     font: '500 14px Montserrat, sans-serif',
-  //     borderBottom: '#b8b8b8 solid 2px',
-  //     opacity: 1,
-  //     transition: '.5s',
-  //   },
-  // },
   root: {
     flexGrow: 1,
   },
@@ -119,13 +85,14 @@ const styles = (theme) => ({
   introduction: {
     'text-align': 'justify',
     color: '#262a30',
-    font: '500 50px Montserrat, sans-serif',
+    font: '500 55px Montserrat, sans-serif',
     padding: '0px 20px 0px 20px',
   },
 
   story: {
     color: '#262a30',
-    font: '500 20px Hind, sans-serif',
+    font: '400 25px Hind, sans-serif',
+
     padding: '0px 20px 0px 20px',
     marginTop: '-80px',
     'text-align': 'left',
@@ -137,33 +104,26 @@ const styles = (theme) => ({
     // fontWeight: 'bold',
   },
   logoPicture: { width: '50px', marginBottom: '-10px' },
-  underline: { 'text-decoration': 'underline' },
+  underline: { 'text-decoration': 'underline', color: '#262a30' },
   gridListTile: {
     '&:hover': {
-      // opacity: 1,
       backgroundColor: 'white',
       color: 'white',
-      '&:hover > div:hover': {
-        img: 'white',
-        // color: 'white',
-        backgroundColor: 'white',
-        'text-decoration': 'none',
-      },
     },
   },
   projectContainerOne: {
-    margin: '10px 0px 20px 0px',
+    margin: '-15px 0px 20px 0px',
     padding: '10px 20px 0px 20px',
-    '&:hover': {
-      backgroundColor: 'white',
-      color: 'white',
-      '&:hover > div:hover': {
-        color: 'white',
-      },
-    },
+    // '&:hover': {
+    //   backgroundColor: 'white',
+    //   color: 'white',
+    //   '&:hover > div:hover': {
+    //     color: 'white',
+    //   },
+    // },
   },
   projectContainerTwo: {
-    marginTop: '-30px',
+    marginTop: '10px',
     padding: '10px 20px 0px 20px',
   },
   projectContainerThree: {
@@ -173,7 +133,7 @@ const styles = (theme) => ({
   imageTextContainer: {
     '&:hover > div': {
       opacity: 1,
-      border: '#161616 solid 3px',
+      // border: '#161616 solid 3px',
       // 'border-radius': '5px',
     },
     position: 'relative',
@@ -198,18 +158,19 @@ const styles = (theme) => ({
     padding: '0px 0px 0px 0px',
   },
   imageText: {
-    color: 'white',
+    // color: 'white',
     color: '#252525',
     font: '500 22px Montserrat, sans-serif',
     position: 'absolute',
     top: '50%',
     left: '50%',
-    '-webkit-transform': 'translate(-50%, -50%)',
-    '-ms-transform': 'translate(-50%, -50%)',
+    // '-webkit-transform': 'translate(-50%, -50%)',
+    // '-ms-transform': 'translate(-50%, -50%)',
     transform: 'translate(-50%, -50%)',
     // 'text-align': 'center',
+    marginTop: '-5px',
   },
-  hrefLink: { 'text-decoration': 'none' },
+  hrefLink: { 'text-decoration': 'none', color: '#262a30' },
   projectSocialIcon: { 'font-size': '50px', paddingTop: '10px' },
   projectTitle: {
     marginTop: '30px',
@@ -217,18 +178,16 @@ const styles = (theme) => ({
     marginBottom: '0px',
   },
   projectDescription: {
-    paddingTop: '0px',
-    paddingBottom: '15px',
-    // marginTop
+    padding: '0px 10px 15px 10px',
     marginTop: '7px',
+    font: '400 16px Hind, sans-serif',
+    // fontWeight: 'bold',
   },
   projectPaper: {
     'border-radius': '0px',
-    // border: '#161616 solid 2px',
     '&:hover': {
       opacity: 1,
       backgroundColor: 'white',
-      // border: '#161616 solid 2px',
     },
   },
 
@@ -238,7 +197,6 @@ const styles = (theme) => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     alignItems: 'flex-end',
-    // borderRight: '#9898a4 solid 5px',
   },
   gridList: {
     width: 600,
@@ -265,36 +223,28 @@ const styles = (theme) => ({
       // 'border-radius': '5px',
     },
   },
+  formContainer: {
+    font: '400 16px Hind, sans-serif',
+    'text-transform': 'lowercase',
+  },
 });
 
 class HomePage extends Component {
-  state = {
-    options: false,
-    password: '',
-  };
-  handleInputChangeFor = (propertyName) => (event) => {
-    this.setState({
-      [propertyName]: event.target.value,
-    });
-  };
-  handleOptionClick = () => {
-    this.setState({
-      options: !this.state.options,
-    });
-    console.log('in handleOptionClick, options is now:', this.state.options);
-  };
+  state = { isShown: false };
   render() {
     const { classes } = this.props;
+    const triggerText = 'send a message';
+    const onSubmit = (event) => {
+      event.preventDefault(event);
+      console.log(event.target.name.value);
+      console.log(event.target.email.value);
+    };
     return (
       <div className={classes.root}>
         <Grid container justify="space-around" spacing={0}>
-          <Grid item className={classes.content} xs={12} sm={12} md={6} lg={6}>
+          <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
             <h1 className={classes.introduction}>
               {/* I uploaded images via the images folder and accessed their links through Github */}
-              {/* <img
-                className={classes.logoPicture}
-                src="https://tinyurl.com/yxnwsqfk"
-              ></img>{' '} */}
               Hola, I'm Bruno.
             </h1>
             <p className={classes.story}>
@@ -311,10 +261,28 @@ class HomePage extends Component {
               When I'm not creating or designing products I enjoy exploring and
               sharing ideas. <br></br> <br></br>
               Feel free to download my <span> </span>{' '}
-              <span className={classes.underline}>resume</span>
-              <span> </span> or send me an <span> </span>{' '}
-              <span className={classes.underline}>email</span> if you have any
-              questions or want to set up a time to chat.<br></br> <br></br>
+              <a
+                href="resume-Bruno_Reyes.pdf"
+                target="_blank"
+                className={classes.hrefLink}
+              >
+                <span className={classes.underline}>resume</span>
+              </a>
+              <span> </span> or send me an email at<span> </span>{' '}
+              <a
+                href="mailto:bruno619reyes@gmail.com"
+                className={classes.underline}
+              >
+                {' '}
+                {/* <Container
+                  className={classes.formContainer}
+                  triggerText={triggerText}
+                  onSubmit={onSubmit}
+                /> */}
+                bruno619reyes@gmail.com
+              </a>{' '}
+              if you have any questions or want to set up a time to chat.
+              <br></br> <br></br>
             </p>
             <div className={classes.socialIconsContainer}>
               <div>
@@ -326,7 +294,7 @@ class HomePage extends Component {
               </div>
             </div>
           </Grid>
-          <Grid item className={classes.content} xs={12} sm={12} md={6} lg={6}>
+          <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
             <h1 className={classes.projectsHeader}>
               <img
                 className={classes.logoPicture}
@@ -349,10 +317,8 @@ class HomePage extends Component {
                   >
                     <div className={classes.projectContainerOne}>
                       <Paper elevation={3} className={classes.projectPaper}>
-                        {/* <Button> */}
                         <div className={classes.imageTextContainer}>
                           <h3 className={classes.projectTitle}>TODO</h3>
-                          {/* <div className={classes.imageTextContainer}> */}
                           <img
                             className={classes.projectPicture}
                             src="https://tinyurl.com/yxdammdx"
@@ -363,11 +329,8 @@ class HomePage extends Component {
                               <GitHubIcon
                                 className={classes.projectSocialIcon}
                               />
-                              {/* <GitHubIcon /> */}
                             </div>
                           </div>
-                          {/* </div> */}
-
                           <p className={classes.projectDescription}>
                             Spanish for 'all', TODO is an application that
                             allows users to manage all of their tasks,
@@ -378,6 +341,42 @@ class HomePage extends Component {
                     </div>
                   </a>
                 </GridListTile>
+
+                <GridListTile className={classes.gridListTile}>
+                  <a
+                    href="https://github.com/brunoreyes/TODO-app"
+                    target="_blank"
+                    className={classes.hrefLink}
+                  >
+                    <div className={classes.projectContainerTwo}>
+                      <Paper elevation={3} className={classes.projectPaper}>
+                        <div className={classes.imageTextContainer}>
+                          <h3 className={classes.projectTitle}>
+                            Server-Side Calculator
+                          </h3>
+                          <img
+                            className={classes.projectPicture}
+                            src="https://tinyurl.com/yyu4pp2p"
+                          ></img>
+                          <div className={classes.overlay}>
+                            <div className={classes.imageText}>
+                              View Project on
+                              <GitHubIcon
+                                className={classes.projectSocialIcon}
+                              />
+                            </div>
+                          </div>
+                          <p className={classes.projectDescription}>
+                            Spanish for 'all', TODO is an application that
+                            allows users to manage all of their tasks,
+                            reminders, ideas, and memories.
+                          </p>
+                        </div>
+                      </Paper>
+                    </div>
+                  </a>
+                </GridListTile>
+
                 <GridListTile cols={1}>
                   <div className={classes.projectContainerTwo}>
                     <Paper className={classes.projectPaper} elevation={3}>
