@@ -85,7 +85,7 @@ const styles = (theme) => ({
 
   story: {
     color: '#262a30',
-    font: '400 25px Hind, sans-serif',
+    font: '400 22px Hind, sans-serif',
 
     padding: '0px 20px 0px 20px',
     marginTop: '-80px',
