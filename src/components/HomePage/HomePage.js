@@ -85,7 +85,7 @@ const styles = (theme) => ({
 
   story: {
     color: '#262a30',
-    font: '400 22px Hind, sans-serif',
+    font: '400 23px Hind, sans-serif',
 
     padding: '0px 20px 0px 20px',
     marginTop: '-80px',
@@ -97,7 +97,7 @@ const styles = (theme) => ({
     font: '500 50px Montserrat, sans-serif',
     // fontWeight: 'bold',
   },
-  logoPicture: { width: '50px', marginBottom: '-10px' },
+  logoPicture: { width: '40px', margin: '0px 10px -3px 0px' },
   underline: { 'text-decoration': 'underline', color: '#262a30' },
   gridListTile: {
     '&:hover': {
