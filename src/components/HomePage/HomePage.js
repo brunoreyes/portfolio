@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import {
   withStyles,
-  FormControl,
-  Input,
-  InputLabel,
-  FormHelperText,
-  Button,
-  Link,
-  Form,
+  // FormControl,
+  // Input,
+  // InputLabel,
+  // FormHelperText,
+  // Button,
+  // Link,
+  // Form,
   Paper,
   Grid,
-  Tabs,
-  Tab,
-  Typography,
   GridList,
   GridListTile,
-  GridListTileBar,
-  withTheme,
-  TextareaAutosize,
   // IconButton,
 } from '@material-ui/core';
 // import WorkIcon from '@material-ui/icons/Work';
@@ -29,7 +23,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Fade from 'react-reveal/Fade';
 // import PersonIcon from '@material-ui/icons/Person';
 // import LockIcon from '@material-ui/icons/Lock';
-import { Container } from '../Container/Container';
+// import { Container } from '../Container/Container';
 
 const styles = (theme) => ({
   root: {
@@ -143,7 +137,6 @@ const styles = (theme) => ({
     width: '100%',
   },
   overlay: {
-    opacity: 1,
     position: 'absolute',
     top: 0,
     bottom: 0,
@@ -180,11 +173,11 @@ const styles = (theme) => ({
   projectDescription: {
     padding: '0px 10px 15px 10px',
     marginTop: '7px',
-    font: '400 16px Hind, sans-serif',
+    font: '400 18px Hind, sans-serif',
     // fontWeight: 'bold',
   },
   projectPaper: {
-    'border-radius': '0px',
+    // 'border-radius': '0px',
     '&:hover': {
       opacity: 1,
       backgroundColor: 'white',
@@ -200,15 +193,12 @@ const styles = (theme) => ({
   },
   gridList: {
     width: 600,
-    height: 500,
     transform: 'translateZ(0)',
     flexWrap: 'nowrap',
     // 'overflow-y': 'scroll !important',
     height: '102%',
     '&::-webkit-scrollbar': {
       width: '.5em',
-      height: '3%',
-      // height: '100vh',
       marginBottom: '10px',
       position: 'relative',
     },
@@ -233,12 +223,12 @@ class HomePage extends Component {
   state = { isShown: false };
   render() {
     const { classes } = this.props;
-    const triggerText = 'send a message';
-    const onSubmit = (event) => {
-      event.preventDefault(event);
-      console.log(event.target.name.value);
-      console.log(event.target.email.value);
-    };
+    // const triggerText = 'send a message';
+    // const onSubmit = (event) => {
+    //   event.preventDefault(event);
+    //   console.log(event.target.name.value);
+    //   console.log(event.target.email.value);
+    // };
     return (
       <div className={classes.root}>
         <Grid container justify="space-around" spacing={0}>
@@ -284,22 +274,25 @@ class HomePage extends Component {
               if you have any questions or want to set up a time to chat.
               <br></br> <br></br>
             </p>
-            <div className={classes.socialIconsContainer}>
-              <div>
-                <GitHubIcon className={classes.githubSocialIcons} />
-              </div>
+            <Fade>
+              <div className={classes.socialIconsContainer}>
+                <div>
+                  <GitHubIcon className={classes.githubSocialIcons} />
+                </div>
 
-              <div className={classes.linkedinSocialIconContainer}>
-                <LinkedInIcon className={classes.linkedinSocialIcons} />
+                <div className={classes.linkedinSocialIconContainer}>
+                  <LinkedInIcon className={classes.linkedinSocialIcons} />
+                </div>
               </div>
-            </div>
+            </Fade>
           </Grid>
           <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
             <h1 className={classes.projectsHeader}>
               <img
+                alt="Bruno Reyes Logo"
                 className={classes.logoPicture}
                 src="https://tinyurl.com/yxnwsqfk"
-              ></img>{' '}
+              ></img>
               Projects
             </h1>
             <div className={classes.GridListRoot}>
@@ -313,6 +306,7 @@ class HomePage extends Component {
                   <a
                     href="https://github.com/brunoreyes/TODO-app"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className={classes.hrefLink}
                   >
                     <div className={classes.projectContainerOne}>
@@ -320,6 +314,7 @@ class HomePage extends Component {
                         <div className={classes.imageTextContainer}>
                           <h3 className={classes.projectTitle}>TODO</h3>
                           <img
+                            alt="TODO app"
                             className={classes.projectPicture}
                             src="https://tinyurl.com/yxdammdx"
                           ></img>
@@ -346,6 +341,8 @@ class HomePage extends Component {
                   <a
                     href="https://github.com/brunoreyes/TODO-app"
                     target="_blank"
+                    alt="TODO app"
+                    rel="noopener noreferrer"
                     className={classes.hrefLink}
                   >
                     <div className={classes.projectContainerTwo}>
@@ -357,6 +354,7 @@ class HomePage extends Component {
                           <img
                             className={classes.projectPicture}
                             src="https://tinyurl.com/yyu4pp2p"
+                            alt="Server-Side Calculator"
                           ></img>
                           <div className={classes.overlay}>
                             <div className={classes.imageText}>
@@ -383,6 +381,7 @@ class HomePage extends Component {
                       <img
                         className={classes.projectPicture}
                         src="https://tinyurl.com/yyu4pp2p"
+                        alt="Server-Side Calculator"
                       ></img>
                     </Paper>
                   </div>
@@ -393,6 +392,7 @@ class HomePage extends Component {
                       <img
                         className={classes.projectPicture}
                         src="https://tinyurl.com/yyd7ffm7"
+                        alt="Server-Side Calculator"
                       ></img>
                     </Paper>
                   </div>
