@@ -1,7 +1,7 @@
 {
   "name": "software-developer-portfolio",
   "version": "0.1.0",
-  "homepage": "http://brunoreyes.github.io/my-app",
+  "homepage": "http://brunoreyes.github.io/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
