@@ -50,55 +50,53 @@ class HomePage extends Component {
       <div className={classes.root}>
         <Grid container justify="space-around" spacing={0}>
           <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
-            <h1 className={classes.introduction}>
-              {/* I uploaded images via the images folder and accessed their links through Github */}
-              Hola, I'm Bruno.{' '}
-              <Fade top>
+            {' '}
+            <Fade>
+              <h1 className={classes.introduction}>
+                {/* I uploaded images via the images folder and accessed their links through Github */}
+                Hola, I'm Bruno.{' '}
                 <img
-                  alt="Bruno Reyes profile"
+                  alt="Bruno Reyes"
                   src="images/bruno_9452.jpg"
                   className={classes.profilePicture}
                 ></img>
-              </Fade>
-            </h1>
-            <p className={classes.story}>
-              <br></br> <br></br>I'm a mexican-american software developer at
-              Prime Digital Academy based in the Twin Cities. I have created
-              projects using React, Redux, Sagas, Node.js, Ajax, Express,
-              PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to my time in
-              tech, I worked in UX and marketing for 3+ years, creating
-              websites, social media platforms, branding kits, promotional
-              campaigns, creative content, memos, and research reports. I chose
-              to learn full-stack development to be able to build out my
-              user-centered designs into fully functional applications and to
-              learn how my designs affect developers and stakeholders alike.
-              When I'm not creating or designing products I enjoy exploring and
-              sharing ideas. <br></br> <br></br>
-              Feel free to download my <span> </span>{' '}
-              <a
-                href="resume-Bruno_Reyes.pdf"
-                target="_blank"
-                className={classes.hrefLink}
-              >
-                <span className={classes.underline}>resume</span>
-              </a>
-              <span> </span> or send me an email at<span> </span>{' '}
-              <a
-                href="mailto:bruno619reyes@gmail.com"
-                className={classes.underline}
-              >
-                {' '}
-                {/* <Container
+              </h1>
+              <p className={classes.story}>
+                <br></br> <br></br>I'm a mexican-american software developer at
+                Prime Digital Academy based in the Twin Cities. I have created
+                projects using React, Redux, Sagas, Node.js, Ajax, Express,
+                PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to my time in
+                tech, I worked in UX and marketing for 3+ years, creating
+                websites, social media platforms, branding kits, promotional
+                campaigns, creative content, memos, and research reports. I
+                chose to learn full-stack development to be able to build out my
+                user-centered designs into fully functional applications and to
+                learn how my designs affect developers and stakeholders alike.
+                When I'm not creating or designing products I enjoy exploring
+                and sharing ideas. <br></br> <br></br>
+                Feel free to download my <span> </span>{' '}
+                <a
+                  href="resume-Bruno_Reyes.pdf"
+                  target="_blank"
+                  className={classes.hrefLink}
+                >
+                  <span className={classes.underline}>resume</span>
+                </a>
+                <span> </span> or send me an email at<span> </span>{' '}
+                <a
+                  href="mailto:bruno619reyes@gmail.com"
+                  className={classes.underline}
+                >
+                  {/* <Container
                   className={classes.formContainer}
                   triggerText={triggerText}
                   onSubmit={onSubmit}
                 /> */}
-                bruno619reyes@gmail.com
-              </a>{' '}
-              if you have any questions or want to set up a time to chat.
-              <br></br> <br></br>
-            </p>
-            <Fade>
+                  bruno619reyes@gmail.com
+                </a>{' '}
+                if you have any questions or want to set up a time to chat.
+                <br></br> <br></br>
+              </p>
               <div className={classes.socialIconsContainer}>
                 <div>
                   {' '}
@@ -113,7 +111,6 @@ class HomePage extends Component {
                 </div>
 
                 <div className={classes.linkedinSocialIconContainer}>
-                  {' '}
                   <a
                     href="https://www.linkedin.com/in/brunoreyes/"
                     target="_blank"
@@ -124,126 +121,132 @@ class HomePage extends Component {
                   </a>
                 </div>
                 <div>
-                  {' '}
                   <Brightness3Icon className={classes.darkMode} />
                   <WbSunnyIcon className={classes.darkMode} />
                 </div>
-              </div>
-            </Fade>{' '}
+              </div>{' '}
+            </Fade>
           </Grid>
+
           <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
-            <h1 className={classes.projectsHeader}>
-              <img
-                alt="Bruno Reyes Logo"
-                className={classes.logoPicture}
-                src="https://tinyurl.com/yxnwsqfk"
-              ></img>
-              Projects
-            </h1>
-            <div className={classes.GridListRoot}>
-              {/* cellHeight controls the height of each tile */}
-              <GridList
-                cols={1.5}
-                cellHeight={500}
-                className={classes.gridList}
-              >
-                <GridListTile className={classes.gridListTile}>
-                  <div className={classes.projectContainerOne}>
-                    {' '}
-                    <h3 className={classes.projectTitle}>TODO</h3>
-                    {/* <div className={classes.imageTextContainer}> */}
-                    <img
-                      alt="TODO app"
-                      className={classes.projectPicture}
-                      src="https://tinyurl.com/yxdammdx"
-                    ></img>
-                    <div className={classes.overlay}></div>
-                    <p className={classes.projectDescription}>
-                      TODO, in Spanish meaning "all", manages all of a user's
-                      tasks, reminders, ideas & memories.
-                    </p>{' '}
-                    <a
-                      href="https://github.com/brunoreyes/TODO-app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={classes.hrefLink}
-                    >
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        className={classes.button}
-                        endIcon={
-                          <GitHubIcon className={classes.projectSocialIcon}>
-                            <span className={classes.buttonText}>Explore</span>
-                          </GitHubIcon>
-                        }
+            <Fade>
+              <h1 className={classes.projectsHeader}>
+                <img
+                  alt="Bruno Reyes Logo"
+                  className={classes.logoPicture}
+                  src="https://tinyurl.com/yxnwsqfk"
+                ></img>
+                Projects
+              </h1>
+              <div className={classes.GridListRoot}>
+                {/* cellHeight controls the height of each tile */}
+                <GridList
+                  cols={1.5}
+                  cellHeight={500}
+                  className={classes.gridList}
+                >
+                  <GridListTile className={classes.gridListTile}>
+                    <div className={classes.projectContainerOne}>
+                      {' '}
+                      <h3 className={classes.projectTitle}>TODO</h3>
+                      {/* <div className={classes.imageTextContainer}> */}
+                      <img
+                        alt="TODO app"
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yxdammdx"
+                      ></img>
+                      <div className={classes.overlay}></div>
+                      <p className={classes.projectDescription}>
+                        TODO, in Spanish meaning "all", manages all of a user's
+                        tasks, reminders, ideas & memories.
+                      </p>{' '}
+                      <a
+                        href="https://github.com/brunoreyes/TODO-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={classes.hrefLink}
                       >
-                        Explore
-                      </Button>{' '}
-                    </a>
-                  </div>
-                </GridListTile>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.button}
+                          endIcon={
+                            <GitHubIcon className={classes.projectSocialIcon}>
+                              <span className={classes.buttonText}>
+                                Explore
+                              </span>
+                            </GitHubIcon>
+                          }
+                        >
+                          Explore
+                        </Button>{' '}
+                      </a>
+                    </div>
+                  </GridListTile>
 
-                <GridListTile className={classes.gridListTile}>
-                  <div className={classes.projectContainerTwo}>
-                    {/* <Paper elevation={3} className={classes.projectPaper}> */}
+                  <GridListTile className={classes.gridListTile}>
+                    <div className={classes.projectContainerTwo}>
+                      {/* <Paper elevation={3} className={classes.projectPaper}> */}
 
-                    <h3 className={classes.projectTitle}>
-                      Server-Side Calculator
-                    </h3>
-                    <div className={classes.imageTextContainer}>
+                      <h3 className={classes.projectTitle}>
+                        Server-Side Calculator
+                      </h3>
+                      <div className={classes.imageTextContainer}>
+                        <img
+                          className={classes.projectPicture}
+                          src="https://tinyurl.com/yyu4pp2p"
+                          alt="Server-Side Calculator"
+                        ></img>
+                        <div className={classes.overlay}>
+                          <a
+                            href="https://github.com/brunoreyes/TODO-app"
+                            target="_blank"
+                            alt="TODO app"
+                            rel="noopener noreferrer"
+                            className={classes.hrefLink}
+                          >
+                            {' '}
+                            <div className={classes.imageText}>
+                              View Project On
+                              <GitHubIcon
+                                className={classes.projectSocialIcon}
+                              />
+                            </div>
+                          </a>
+                        </div>
+                        {/* <p className={classes.projectDescription}>
+                            Spanish for 'all', TODO is an application that
+                            allows users to manage all of their tasks,
+                            reminders, ideas, and memories.
+                          </p> */}
+                      </div>
+                      {/* </Paper> */}
+                    </div>
+                  </GridListTile>
+
+                  <GridListTile cols={1}>
+                    <div className={classes.projectContainerTwo}>
                       <img
                         className={classes.projectPicture}
                         src="https://tinyurl.com/yyu4pp2p"
                         alt="Server-Side Calculator"
                       ></img>
-                      <div className={classes.overlay}>
-                        <a
-                          href="https://github.com/brunoreyes/TODO-app"
-                          target="_blank"
-                          alt="TODO app"
-                          rel="noopener noreferrer"
-                          className={classes.hrefLink}
-                        >
-                          {' '}
-                          <div className={classes.imageText}>
-                            View Project On
-                            <GitHubIcon className={classes.projectSocialIcon} />
-                          </div>
-                        </a>
-                      </div>
-                      {/* <p className={classes.projectDescription}>
-                            Spanish for 'all', TODO is an application that
-                            allows users to manage all of their tasks,
-                            reminders, ideas, and memories.
-                          </p> */}
+                      {/* </Paper> */}
                     </div>
-                    {/* </Paper> */}
-                  </div>
-                </GridListTile>
-
-                <GridListTile cols={1}>
-                  <div className={classes.projectContainerTwo}>
-                    <img
-                      className={classes.projectPicture}
-                      src="https://tinyurl.com/yyu4pp2p"
-                      alt="Server-Side Calculator"
-                    ></img>
-                    {/* </Paper> */}
-                  </div>
-                </GridListTile>
-                <GridListTile>
-                  <div className={classes.projectContainerThree}>
-                    <img
-                      className={classes.projectPicture}
-                      src="https://tinyurl.com/yyd7ffm7"
-                      alt="Server-Side Calculator"
-                    ></img>
-                    {/* </Paper> */}
-                  </div>
-                </GridListTile>
-              </GridList>
-            </div>
+                  </GridListTile>
+                  <GridListTile>
+                    <div className={classes.projectContainerThree}>
+                      <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yyd7ffm7"
+                        alt="Server-Side Calculator"
+                      ></img>
+                      {/* </Paper> */}
+                    </div>
+                  </GridListTile>
+                </GridList>
+              </div>
+            </Fade>
           </Grid>
         </Grid>
       </div>
