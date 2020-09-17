@@ -23,21 +23,25 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 // import EmailIcon from '@material-ui/icons/Email';
 import Fade from 'react-reveal/Fade';
-// import Flip from 'react-reveal/Flip';
-// import Roll from 'react-reveal/Roll';
-// import Zoom from 'react-reveal/Zoom';
-// import LightSpeed from 'react-reveal/LightSpeed';
-// import Spin from 'react-reveal/Spin';
-// import Slide from 'react-reveal/Slide';
-
-// import PersonIcon from '@material-ui/icons/Person';
-// import { Container } from '../Container/Container';
 import styles from '../themes/homeTheme';
-// import Image from 'material-ui-image';
 
 class HomePage extends Component {
-  state = { isShown: false };
-
+  state = {
+    darkMode: false,
+    toggleLogo: false,
+  };
+  toggleDarkMode = () => {
+    // console.log('You clicked the preview icon');
+    this.setState({
+      darkMode: !this.state.darkMode,
+    });
+  };
+  toggleLogo = () => {
+    // console.log('You clicked the preview icon');
+    this.setState({
+      toggleLogo: !this.state.toggleLogo,
+    });
+  };
   render() {
     const { classes } = this.props;
     // const triggerText = 'send a message';
@@ -46,22 +50,35 @@ class HomePage extends Component {
     //   console.log(event.target.name.value);
     //   console.log(event.target.email.value);
     // };
+
     return (
       <div className={classes.root}>
-        <Grid container justify="space-around" spacing={0}>
+        <Grid
+          container
+          justify="space-around"
+          className={
+            this.state.darkMode ? classes.darkModeScreen : classes.lightMode
+          }
+          spacing={0}
+        >
           <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
             {' '}
             <Fade>
-              <h1 className={classes.introduction}>
+              <h1
+                className={
+                  this.state.darkMode
+                    ? classes.introductionLight
+                    : classes.introduction
+                }
+              >
                 {/* I uploaded images via the images folder and accessed their links through Github */}
                 Hola, I'm Bruno.{' '}
-                <img
-                  alt="Bruno Reyes"
-                  src="images/bruno_9452.jpg"
-                  className={classes.profilePicture}
-                ></img>
               </h1>
-              <p className={classes.story}>
+              <p
+                className={
+                  this.state.darkMode ? classes.storyLight : classes.story
+                }
+              >
                 <br></br> <br></br>I'm a mexican-american software developer at
                 Prime Digital Academy based in the Twin Cities. I have created
                 projects using React, Redux, Sagas, Node.js, Ajax, Express,
@@ -80,12 +97,24 @@ class HomePage extends Component {
                   target="_blank"
                   className={classes.hrefLink}
                 >
-                  <span className={classes.underline}>resume</span>
+                  <span
+                    className={
+                      this.state.darkMode
+                        ? classes.underlineLight
+                        : classes.underline
+                    }
+                  >
+                    resume
+                  </span>
                 </a>
                 <span> </span> or send me an email at<span> </span>{' '}
                 <a
                   href="mailto:bruno619reyes@gmail.com"
-                  className={classes.underline}
+                  className={
+                    this.state.darkMode
+                      ? classes.underlineLight
+                      : classes.underline
+                  }
                 >
                   {/* <Container
                   className={classes.formContainer}
@@ -97,45 +126,107 @@ class HomePage extends Component {
                 if you have any questions or want to set up a time to chat.
                 <br></br> <br></br>
               </p>
-              <div className={classes.socialIconsContainer}>
+              <div
+                className={
+                  this.state.darkMode
+                    ? classes.socialIconsContainerLight
+                    : classes.socialIconsContainer
+                }
+              >
+                <div className={classes.linkedinSocialIconContainer}>
+                  <a
+                    href="https://www.linkedin.com/in/brunoreyes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={
+                      this.state.darkMode
+                        ? classes.hrefLinkLight
+                        : classes.hrefLink
+                    }
+                  >
+                    <LinkedInIcon className={classes.linkedinSocialIcons} />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://medium.com/@bruno619reyes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={
+                      this.state.darkMode
+                        ? classes.hrefLinkLight
+                        : classes.hrefLink
+                    }
+                  >
+                    <img
+                      src="/social_media_logo_medium-512.png"
+                      className={classes.mediumIcon}
+                    ></img>
+                  </a>
+                </div>
                 <div>
                   {' '}
                   <a
                     href="https://github.com/brunoreyes"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={classes.hrefLink}
+                    className={
+                      this.state.darkMode
+                        ? classes.hrefLinkLight
+                        : classes.hrefLink
+                    }
                   >
                     <GitHubIcon className={classes.githubSocialIcons} />
                   </a>
                 </div>
-
-                <div className={classes.linkedinSocialIconContainer}>
-                  <a
-                    href="https://www.linkedin.com/in/brunoreyes/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={classes.hrefLink}
-                  >
-                    <LinkedInIcon className={classes.linkedinSocialIcons} />{' '}
-                  </a>
-                </div>
                 <div>
-                  <Brightness3Icon className={classes.darkMode} />
-                  <WbSunnyIcon className={classes.darkMode} />
+                  {this.state.darkMode ? (
+                    <WbSunnyIcon
+                      onClick={this.toggleDarkMode}
+                      className={classes.darkMode}
+                    />
+                  ) : (
+                    <Brightness3Icon
+                      onClick={this.toggleDarkMode}
+                      className={classes.darkMode}
+                    />
+                  )}
                 </div>
               </div>{' '}
             </Fade>
           </Grid>
 
-          <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
+          <Grid
+            item
+            className={classes.contentRight}
+            xs={12}
+            sm={12}
+            md={12}
+            lg={6}
+          >
             <Fade>
-              <h1 className={classes.projectsHeader}>
+              {this.state.darkMode ? (
+                <img
+                  alt="Bruno Reyes"
+                  src="images/bruno_9452.jpg"
+                  className={classes.profilePicture}
+                  onClick={this.toggleDarkMode}
+                ></img>
+              ) : (
                 <img
                   alt="Bruno Reyes Logo"
                   className={classes.logoPicture}
+                  onClick={this.toggleDarkMode}
                   src="https://tinyurl.com/yxnwsqfk"
                 ></img>
+              )}
+              <h1
+                className={
+                  this.state.darkMode
+                    ? classes.projectsHeaderLight
+                    : classes.projectsHeader
+                }
+              >
                 Projects
               </h1>
               <div className={classes.GridListRoot}>
@@ -143,20 +234,42 @@ class HomePage extends Component {
                 <GridList
                   cols={1.5}
                   cellHeight={500}
-                  className={classes.gridList}
+                  className={
+                    this.state.darkMode
+                      ? classes.gridListLight
+                      : classes.gridList
+                  }
                 >
                   <GridListTile className={classes.gridListTile}>
                     <div className={classes.projectContainerOne}>
                       {' '}
-                      <h3 className={classes.projectTitle}>TODO</h3>
+                      <h3
+                        className={
+                          this.state.darkMode
+                            ? classes.projectTitleLight
+                            : classes.projectTitle
+                        }
+                      >
+                        TODO
+                      </h3>
                       {/* <div className={classes.imageTextContainer}> */}
                       <img
                         alt="TODO app"
-                        className={classes.projectPicture}
+                        className={
+                          this.state.darkMode
+                            ? classes.projectPictureLight
+                            : classes.projectPicture
+                        }
                         src="https://tinyurl.com/yxdammdx"
                       ></img>
                       <div className={classes.overlay}></div>
-                      <p className={classes.projectDescription}>
+                      <p
+                        className={
+                          this.state.darkMode
+                            ? classes.projectDescriptionLight
+                            : classes.projectDescription
+                        }
+                      >
                         TODO, in Spanish meaning "all", manages all of a user's
                         tasks, reminders, ideas & memories.
                       </p>{' '}
@@ -170,6 +283,11 @@ class HomePage extends Component {
                           variant="contained"
                           color="primary"
                           className={classes.button}
+                          className={
+                            this.state.darkMode
+                              ? classes.buttonLight
+                              : classes.button
+                          }
                           endIcon={
                             <GitHubIcon className={classes.projectSocialIcon}>
                               <span className={classes.buttonText}>
