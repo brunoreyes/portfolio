@@ -29,6 +29,7 @@ class HomePage extends Component {
   state = {
     darkMode: false,
     toggleLogo: false,
+    show: false,
   };
   toggleDarkMode = () => {
     // console.log('You clicked the preview icon');
@@ -42,6 +43,12 @@ class HomePage extends Component {
       toggleLogo: !this.state.toggleLogo,
     });
   };
+  toggleShowProjectText = () => {
+    // console.log('You clicked the preview icon');
+    this.setState({
+      show: !this.state.show,
+    });
+  };
   render() {
     const { classes } = this.props;
     // const triggerText = 'send a message';
@@ -52,7 +59,10 @@ class HomePage extends Component {
     // };
 
     return (
-      <div className={classes.root}>
+      <div
+        // className={classes.root}
+        className={this.state.darkMode ? classes.darkModeRoot : classes.root}
+      >
         <Grid
           container
           justify="space-around"
@@ -79,18 +89,18 @@ class HomePage extends Component {
                   this.state.darkMode ? classes.storyLight : classes.story
                 }
               >
-                <br></br> <br></br>I'm a mexican-american software developer at
-                Prime Digital Academy based in the Twin Cities. I have created
-                projects using React, Redux, Sagas, Node.js, Ajax, Express,
-                PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to my time in
-                tech, I worked in UX and marketing for 3+ years, creating
-                websites, social media platforms, branding kits, promotional
-                campaigns, creative content, memos, and research reports. I
-                chose to learn full-stack development to be able to build out my
-                user-centered designs into fully functional applications and to
-                learn how my designs affect developers and stakeholders alike.
-                When I'm not creating or designing products I enjoy exploring
-                and sharing ideas. <br></br> <br></br>
+                <br></br> <br></br>I'm a mexican-american software developer
+                based in the Twin Cities. I have created projects using React,
+                Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL, jQuery,
+                AWS S3, and CSS. Prior to my time in tech, I worked in UX and
+                marketing for 3+ years, creating websites, social media
+                platforms, branding kits, promotional campaigns, creative
+                content, memos, and research reports. I chose to learn
+                full-stack development to be able to build out my user-centered
+                designs into fully functional applications and to learn how my
+                designs affect developers and stakeholders alike. When I'm not
+                creating or designing products I enjoy exploring and sharing
+                ideas. <br></br> <br></br>
                 Feel free to download my <span> </span>{' '}
                 <a
                   href="resume-Bruno_Reyes.pdf"
@@ -210,13 +220,13 @@ class HomePage extends Component {
                   alt="Bruno Reyes"
                   src="images/bruno_9452.jpg"
                   className={classes.profilePicture}
-                  onClick={this.toggleDarkMode}
+                  // onClick={this.toggleDarkMode}
                 ></img>
               ) : (
                 <img
                   alt="Bruno Reyes Logo"
                   className={classes.logoPicture}
-                  onClick={this.toggleDarkMode}
+                  // onClick={this.toggleDarkMode}
                   src="https://tinyurl.com/yxnwsqfk"
                 ></img>
               )}
@@ -243,15 +253,17 @@ class HomePage extends Component {
                   <GridListTile className={classes.gridListTile}>
                     <div className={classes.projectContainerOne}>
                       {' '}
-                      <h3
-                        className={
-                          this.state.darkMode
-                            ? classes.projectTitleLight
-                            : classes.projectTitle
-                        }
-                      >
-                        TODO
-                      </h3>
+                      <Fade up when={this.state.show}>
+                        <h3
+                          className={
+                            this.state.darkMode
+                              ? classes.projectTitleLight
+                              : classes.projectTitle
+                          }
+                        >
+                          TODO
+                        </h3>
+                      </Fade>
                       {/* <div className={classes.imageTextContainer}> */}
                       <img
                         alt="TODO app"
@@ -260,19 +272,88 @@ class HomePage extends Component {
                             ? classes.projectPictureLight
                             : classes.projectPicture
                         }
+                        onClick={this.toggleShowProjectText}
                         src="https://tinyurl.com/yxdammdx"
                       ></img>
                       <div className={classes.overlay}></div>
-                      <p
+                      <Fade down when={this.state.show}>
+                        <p
+                          className={
+                            this.state.darkMode
+                              ? classes.projectDescriptionLight
+                              : classes.projectDescription
+                          }
+                        >
+                          TODO, in Spanish meaning "all", manages all of a
+                          user's tasks, reminders, ideas & memories.
+                        </p>{' '}
+                      </Fade>
+                      <a
+                        href="https://github.com/brunoreyes/TODO-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={classes.hrefLink}
+                      >
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.button}
+                          className={
+                            this.state.darkMode
+                              ? classes.buttonLight
+                              : classes.button
+                          }
+                          endIcon={
+                            <GitHubIcon className={classes.projectSocialIcon}>
+                              <span className={classes.buttonText}>
+                                Explore
+                              </span>
+                            </GitHubIcon>
+                          }
+                        >
+                          Explore
+                        </Button>{' '}
+                      </a>
+                    </div>
+                  </GridListTile>
+                  <GridListTile className={classes.gridListTile}>
+                    <div className={classes.projectContainerOne}>
+                      {' '}
+                      <Fade up when={this.state.show}>
+                        <h3
+                          className={
+                            this.state.darkMode
+                              ? classes.projectTitleLight
+                              : classes.projectTitle
+                          }
+                        >
+                          UNiQUE
+                        </h3>
+                      </Fade>
+                      {/* <div className={classes.imageTextContainer}> */}
+                      <img
+                        alt="unique mobile app"
                         className={
                           this.state.darkMode
-                            ? classes.projectDescriptionLight
-                            : classes.projectDescription
+                            ? classes.projectPictureLight
+                            : classes.projectPicture
                         }
-                      >
-                        TODO, in Spanish meaning "all", manages all of a user's
-                        tasks, reminders, ideas & memories.
-                      </p>{' '}
+                        onClick={this.toggleShowProjectText}
+                        src="/build/images/realmMobile.png"
+                      ></img>
+                      <div className={classes.overlay}></div>
+                      <Fade down when={this.state.show}>
+                        <p
+                          className={
+                            this.state.darkMode
+                              ? classes.projectDescriptionLight
+                              : classes.projectDescription
+                          }
+                        >
+                          TODO, in Spanish meaning "all", manages all of a
+                          user's tasks, reminders, ideas & memories.
+                        </p>{' '}
+                      </Fade>
                       <a
                         href="https://github.com/brunoreyes/TODO-app"
                         target="_blank"

@@ -2,14 +2,26 @@ const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },
+  darkModeRoot: {
+    flexGrow: 1,
+    backgroundColor: '#262a30',
+
+    // paddingBottom: '60px',
+  },
   content: {
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },
   darkModeScreen: {
     backgroundColor: '#262a30',
+    transition: '.5s',
+    height: '100vh',
   },
-  lightMode: { backgroundColor: 'white' },
+  lightMode: {
+    backgroundColor: 'white',
+    transition: '.5s',
+    height: '100vh',
+  },
   contentRight: {
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
@@ -21,6 +33,7 @@ const styles = (theme) => ({
     font: '500 300% Montserrat, sans-serif',
     padding: '0px 20px 10px 20px',
     marginTop: '10px',
+    transition: '.5s',
   },
   introductionLight: {
     'text-align': 'left',
@@ -28,28 +41,34 @@ const styles = (theme) => ({
     font: '500 300% Montserrat, sans-serif',
     padding: '0px 20px 10px 20px',
     marginTop: '10px',
+    transition: '.5s',
   },
   story: {
     color: '#262a30',
-    font: '500 22px Hind, sans-serif',
+    font: '400 22px Hind, sans-serif',
+    // font: '400 25px pt esteban, serif',
     padding: '0px 20px 0px 20px',
     marginTop: '-80px',
     'text-align': 'left',
+    transition: '.5s',
   },
   storyLight: {
     color: 'white',
-    font: '500 22px Hind, sans-serif',
+    font: '400 22px Hind, sans-serif',
     padding: '0px 20px 0px 20px',
     marginTop: '-80px',
     'text-align': 'left',
+    transition: '.5s',
   },
   socialIconsContainer: {
     color: '#252525',
     width: 'fit-content',
     height: '30px',
-    margin: '-60px auto 10px auto',
+    margin: '0px auto 30px auto',
+    padding: '0px auto 60px auto',
     bottom: 10,
     display: 'flex',
+    transition: '.5s',
     'text-align': 'center',
     '&:hover > div': {
       opacity: 0.5,
@@ -66,9 +85,11 @@ const styles = (theme) => ({
     color: 'white',
     width: 'fit-content',
     height: '30px',
-    margin: '-60px auto 10px auto',
+    margin: '0px auto 30px auto',
+    padding: '0px auto 60px auto',
     bottom: 10,
     display: 'flex',
+    transition: '.5s',
     'text-align': 'center',
     '&:hover > div': {
       opacity: 0.5,
@@ -103,36 +124,43 @@ const styles = (theme) => ({
     transform: 'rotate(45deg)',
   },
   profilePicture: {
-    width: '15%',
+    width: '14%',
     'border-radius': 5,
     // 'text-align': 'left',
     // border: '#252525 solid 3px',
     // 'box-shadow': ' 5px 5px 5px -5px #252525',
-    margin: '0px 0px 0px 0px',
+    margin: '0px 0px .7px 0px',
+    transition: '.5s',
   },
   logoPicture: {
-    width: '15%',
-
+    width: '14%',
     margin: '0px 0px 0px 0px',
     'border-radius': '5px',
+    transition: '.5s',
+    '&:hover': {
+      filter: 'none',
+    },
   },
   projectsHeader: {
     color: '#262a30',
     padding: '0px 20px 0px 20px',
     font: '500 50px Montserrat, sans-serif',
     margin: '0px',
+    transition: '.5s',
   },
   projectsHeaderLight: {
     color: 'white',
     padding: '0px 20px 0px 20px',
     font: '500 50px Montserrat, sans-serif',
     margin: '0px',
+    transition: '.5s',
   },
   underline: {
     'text-decoration': 'underline',
     color: '#262a30',
     '&:hover': {
       color: '#34a1fd',
+      transition: '.5s',
       transition: '.5s',
     },
   },
@@ -141,6 +169,7 @@ const styles = (theme) => ({
     color: 'white',
     '&:hover': {
       color: '#34a1fd',
+      transition: '.5s',
       transition: '.5s',
     },
   },
@@ -160,11 +189,20 @@ const styles = (theme) => ({
 
   projectPicture: {
     width: '100%',
-    'box-shadow': '0px 4px 6px 0px',
+    '&:hover': {
+      'box-shadow': '0px 4px 6px 0px',
+    },
+    transition: '.5s',
+    // position: 'absolute',
+    'z-index': 999,
   },
   projectPictureLight: {
     width: '100%',
-    'box-shadow': '0px 1px 6px 0px #fff',
+
+    '&:hover': {
+      'box-shadow': '0px 1px 6px 0px #fff',
+    },
+    transition: '.5s',
   },
   hrefLink: {
     'text-decoration': 'none',
@@ -180,6 +218,9 @@ const styles = (theme) => ({
     margin: '30px 0px 0px 0px',
     padding: '10px 20px 10px 20px',
     color: '#262a30',
+    transition: '.5s',
+    position: 'relative',
+    'z-index': 99,
   },
   projectDescription: {
     padding: '0px 10px 0px 10px',
@@ -187,12 +228,16 @@ const styles = (theme) => ({
     font: '400 16px Hind, sans-serif',
     'text-align': 'center',
     color: '#262a30',
+
+    transition: '.5s',
+    'z-index': 9,
   },
   projectTitleLight: {
     font: '600 22px Montserrat, sans-serif',
     margin: '30px 0px 0px 0px',
     padding: '10px 20px 10px 20px',
     color: 'white',
+    transition: '.5s',
   },
   projectDescriptionLight: {
     padding: '0px 10px 0px 10px',
@@ -200,6 +245,7 @@ const styles = (theme) => ({
     font: '400 16px Hind, sans-serif',
     'text-align': 'center',
     color: 'white',
+    transition: '.5s',
   },
   //   projectPaper: {
   //     'border-radius': '0px',
@@ -223,6 +269,7 @@ const styles = (theme) => ({
     font: '500 16px Montserrat, sans-serif',
     'text-transform': 'capitalize',
     backgroundColor: '#262b2f',
+    transition: '.5s',
     '&:hover': {
       transition: '.5s',
       // color: '#34a1fd',
@@ -242,6 +289,7 @@ const styles = (theme) => ({
     font: '500 16px Montserrat, sans-serif',
     'text-transform': 'capitalize',
     backgroundColor: 'white',
+    transition: '.5s',
     '&:hover': {
       transition: '.5s',
       // color: '#34a1fd',
@@ -263,6 +311,7 @@ const styles = (theme) => ({
     flexWrap: 'nowrap',
     // 'overflow-y': 'scroll !important',
     height: '102%',
+    transition: '.5s',
     '&::-webkit-scrollbar': {
       width: '.5em',
       marginBottom: '10px',
@@ -285,6 +334,7 @@ const styles = (theme) => ({
     flexWrap: 'nowrap',
     // 'overflow-y': 'scroll !important',
     height: '102%',
+    transition: '.5s',
     '&::-webkit-scrollbar': {
       width: '.5em',
       marginBottom: '10px',
