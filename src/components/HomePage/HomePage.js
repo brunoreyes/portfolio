@@ -339,7 +339,7 @@ class HomePage extends Component {
                             : classes.projectPicture
                         }
                         onClick={this.toggleShowProjectText}
-                        src="/build/images/realmMobile.png"
+                        src="public/images/realmMobile.png"
                       ></img>
                       <div className={classes.overlay}></div>
                       <Fade down when={this.state.show}>
