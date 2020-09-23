@@ -206,7 +206,6 @@ class HomePage extends Component {
                 >
                   Send Message
                 </Button> */}
-                {/* {this.state.modal ? : <></>} */}
                 <Dialog
                   open={this.state.dialog}
                   onClose={this.handleClose}
