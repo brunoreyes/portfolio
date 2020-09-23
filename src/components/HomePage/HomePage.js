@@ -188,7 +188,7 @@ class HomePage extends Component {
                   bruno619reyes@gmail.com
                 </a>{' '}
                 <br></br>
-                if you have any questions or want to set up a time to chat..
+                if you have any questions or want to set up a time to chat.
                 {/* <Container
                   className={classes.formContainer}
                   triggerText={triggerText}
