@@ -26,7 +26,7 @@ const styles = (theme) => ({
     color: '#262a30',
     font: '600 230% Montserrat, sans-serif',
     padding: '0px 5% 0px 5%',
-    margin: '10% 0% 5% 0%',
+    margin: '8% 0% 5% 0%',
     transition: '.5s',
   },
   introductionLight: {
@@ -34,7 +34,7 @@ const styles = (theme) => ({
     color: 'white',
     font: '600 230% Montserrat, sans-serif',
     padding: '0px 5% 0px 5%',
-    margin: '10% 0% 5% 0%',
+    margin: '8% 0% 5% 0%',
     transition: '.5s',
   },
   story: {
@@ -59,7 +59,7 @@ const styles = (theme) => ({
     'border-bottom': '1px solid currentColor',
     color: '#262a30',
     'text-decoration': 'none',
-    'line-height': '.9',
+    'line-height': '.6',
     display: 'inline-block',
     '&:hover': { 'border-bottom': '2px solid currentColor' },
   },
@@ -129,7 +129,7 @@ const styles = (theme) => ({
   },
   socialIconsContainer: {
     color: '#252525',
-    margin: '3% 5% 12% 6%',
+    margin: '3% 5% 10% 6%',
     padding: '0px auto 0% auto',
     display: 'flex',
     transition: '.5s',
@@ -146,10 +146,10 @@ const styles = (theme) => ({
     },
   },
   socialIconsContainerLight: {
-    // color: 'white',
+    color: 'white',
     // width: 'fit-content',
     // height: '30px',
-    margin: '3% 5% 12% 6%',
+    margin: '3% 5% 10% 6%',
     padding: '0px auto 0% auto',
     // bottom: 10,
     display: 'flex',
@@ -175,7 +175,6 @@ const styles = (theme) => ({
   linkedinSocialIcons: {
     'font-size': '45px',
     display: 'inline-block',
-    color: '#252525',
   },
   mediumIcon: {
     width: '35px',

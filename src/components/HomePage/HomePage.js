@@ -151,14 +151,15 @@ class HomePage extends Component {
                 developed projects using React, Redux, Sagas, Node.js, Ajax,
                 Express, PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to
                 coding, I held various roles within UX and marketing for 4+
-                years, creating websites, social media platforms, branding kits,
-                promotional campaigns, templates, and usability reports. I chose
-                to learn full-stack development to be able to build out
-                user-centered designs into fully functional applications and to
-                learn how my designs affect developers, designers and
-                stakeholders alike. When I'm not creating or designing products,
-                I enjoy exploring new foods, locations, activities and cultures
-                as well as sharing ideas. <br></br> <br></br>
+                years, creating websites, social media platforms, photography
+                and editing, branding kits, promotional campaigns, templates,
+                usability reports, and market research. I chose to learn
+                full-stack development to be able to build out user-centered
+                designs into fully functional applications and to learn how my
+                designs affect developers, designers and stakeholders alike.
+                When I'm not creating or designing products, I enjoy exploring
+                new foods, locations, activities and cultures as well as sharing
+                ideas. <br></br> <br></br>
                 Download my{' '}
                 <a
                   href="resume-Bruno_Reyes.pdf"
