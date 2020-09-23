@@ -146,7 +146,7 @@ const styles = (theme) => ({
     },
   },
   socialIconsContainerLight: {
-    color: 'white',
+    // color: 'white',
     // width: 'fit-content',
     // height: '30px',
     margin: '3% 5% 12% 6%',
@@ -175,6 +175,7 @@ const styles = (theme) => ({
   linkedinSocialIcons: {
     'font-size': '45px',
     display: 'inline-block',
+    color: '#252525',
   },
   mediumIcon: {
     width: '35px',
