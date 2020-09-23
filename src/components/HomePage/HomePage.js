@@ -176,7 +176,7 @@ class HomePage extends Component {
                     resume
                   </span>
                 </a>
-                <span> </span> or email me at
+                <span> </span> or email me at <span> </span>
                 <a
                   href="mailto:bruno619reyes@gmail.com"
                   className={
