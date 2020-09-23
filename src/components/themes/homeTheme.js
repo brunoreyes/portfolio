@@ -69,7 +69,6 @@ const styles = (theme) => ({
     'text-decoration': 'none',
     'line-height': '.9',
     display: 'inline-block',
-    color: 'white',
     '&:hover': { 'border-bottom': '2px solid currentColor' },
   },
   projectsButton: {

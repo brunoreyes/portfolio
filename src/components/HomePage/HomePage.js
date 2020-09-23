@@ -10,8 +10,8 @@ import {
   // Form,
   // Paper,
   Grid,
-  GridList,
-  GridListTile,
+  // GridList,
+  // GridListTile,
   // IconButton,
 } from '@material-ui/core';
 
@@ -310,7 +310,7 @@ class HomePage extends Component {
                     }
                   >
                     <img
-                      src="../../../public/images/medium.png"
+                      src="https://tinyurl.com/yx96xdko"
                       alt="medium logo"
                       className={classes.mediumIcon}
                     ></img>
