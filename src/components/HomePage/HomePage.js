@@ -14,6 +14,14 @@ import {
   GridListTile,
   // IconButton,
 } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 // import WorkIcon from '@material-ui/icons/Work';
@@ -24,12 +32,30 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import EmailIcon from '@material-ui/icons/Email';
 import Fade from 'react-reveal/Fade';
 import styles from '../themes/homeTheme';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import HorizontalScroll from '../HorizontalScroll/HorizontalScroll';
+import TinySlider from '../MyGallery/MyGallery.js';
+import MyGallery from '../MyGallery/MyGallery.js';
+import Modal from '../Modal/Modal';
+import { init } from 'emailjs-com';
+init('user_SJcTnoSDpoQ7o1o28hvHC');
 
 class HomePage extends Component {
   state = {
     darkMode: false,
-    toggleLogo: false,
-    show: false,
+    // toggleLogo: false,
+    dialog: false,
+    // show1: false,
+    // show2: false,
+    // show3: false,
+    // show4: false,
+    // show5: false,
+    // show6: false,
   };
   toggleDarkMode = () => {
     // console.log('You clicked the preview icon');
@@ -37,20 +63,80 @@ class HomePage extends Component {
       darkMode: !this.state.darkMode,
     });
   };
-  toggleLogo = () => {
-    // console.log('You clicked the preview icon');
-    this.setState({
-      toggleLogo: !this.state.toggleLogo,
-    });
+  // toggleModal = () => {
+  //   // console.log('You clicked the preview icon');
+  //   this.setState({
+  //     modal: !this.state.modal,
+  //   });
+  // };
+
+  handleClickOpen = () => {
+    this.setState({ dialog: true });
   };
-  toggleShowProjectText = () => {
-    // console.log('You clicked the preview icon');
-    this.setState({
-      show: !this.state.show,
-    });
+
+  handleClose = () => {
+    this.setState({ dialog: false });
+    console.log('cancel');
   };
+  // sendEmail(e) {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm(
+  //       'service_4vfbfcr',
+  //       'template_5r629bo',
+  //       e.target,
+  //       'user_SJcTnoSDpoQ7o1o28hvHC'
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // }
+
+  // toggleLogo = () => {
+  //   // console.log('You clicked the preview icon');
+  //   this.setState({
+  //     toggleLogo: !this.state.toggleLogo,
+  //   });
+  // };
+  // toggleProjectText1 = () => {
+  //   this.setState({
+  //     show1: !this.state.show1,
+  //   });
+  // };
+  // toggleProjectText2 = () => {
+  //   this.setState({
+  //     show2: !this.state.show2,
+  //   });
+  // };
+  // toggleProjectText3 = () => {
+  //   this.setState({
+  //     show3: !this.state.show3,
+  //   });
+  // };
+  // toggleProjectText4 = () => {
+  //   this.setState({
+  //     show4: !this.state.show4,
+  //   });
+  // };
+  // toggleProjectText5 = () => {
+  //   this.setState({
+  //     show5: !this.state.show5,
+  //   });
+  // };
+  // toggleProjectText6 = () => {
+  //   this.setState({
+  //     show6: !this.state.show6,
+  //   });
+  // };
   render() {
     const { classes } = this.props;
+
     // const triggerText = 'send a message';
     // const onSubmit = (event) => {
     //   event.preventDefault(event);
@@ -66,12 +152,18 @@ class HomePage extends Component {
         <Grid
           container
           justify="space-around"
-          className={
-            this.state.darkMode ? classes.darkModeScreen : classes.lightMode
-          }
+          className={this.state.darkMode ? classes.darkMode : classes.lightMode}
           spacing={0}
         >
-          <Grid item className={classes.content} xs={12} sm={12} md={12} lg={6}>
+          <Grid
+            item
+            className={classes.content}
+            xs={12}
+            sm={12}
+            md={6}
+            lg={6}
+            xl={4}
+          >
             {' '}
             <Fade>
               <h1
@@ -89,19 +181,20 @@ class HomePage extends Component {
                   this.state.darkMode ? classes.storyLight : classes.story
                 }
               >
-                <br></br> <br></br>I'm a mexican-american software developer
-                based in the Twin Cities. I have created projects using React,
-                Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL, jQuery,
-                AWS S3, and CSS. Prior to my time in tech, I worked in UX and
-                marketing for 3+ years, creating websites, social media
-                platforms, branding kits, promotional campaigns, creative
-                content, memos, and research reports. I chose to learn
-                full-stack development to be able to build out my user-centered
-                designs into fully functional applications and to learn how my
-                designs affect developers and stakeholders alike. When I'm not
-                creating or designing products I enjoy exploring and sharing
-                ideas. <br></br> <br></br>
-                Feel free to download my <span> </span>{' '}
+                <br></br> <br></br>I'm a software engineer from Prime Digital
+                Academy based in Minneapolis. I have developed projects using
+                React, Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL,
+                jQuery, AWS S3, and CSS. Prior to coding, I held various roles
+                within UX and marketing for 4+ years, creating websites, social
+                media platforms, branding kits, promotional campaigns,
+                templates, and usability reports. I chose to learn full-stack
+                development to be able to build out user-centered designs into
+                fully functional applications and to learn how my designs affect
+                developers, designers and stakeholders alike. When I'm not
+                creating or designing products, I enjoy exploring new foods,
+                locations, activities and cultures as well as sharing ideas.{' '}
+                <br></br> <br></br>
+                Download my{' '}
                 <a
                   href="resume-Bruno_Reyes.pdf"
                   target="_blank"
@@ -117,24 +210,103 @@ class HomePage extends Component {
                     resume
                   </span>
                 </a>
-                <span> </span> or send me an email at<span> </span>{' '}
-                <a
+                <span> </span> or email me at bruno619reyes@gmail.com <br></br>
+                if you have any questions or want to set up a time to chat.
+                {/* <a
                   href="mailto:bruno619reyes@gmail.com"
                   className={
                     this.state.darkMode
                       ? classes.underlineLight
                       : classes.underline
                   }
-                >
-                  {/* <Container
+                > */}
+                {/* <Container
                   className={classes.formContainer}
                   triggerText={triggerText}
                   onSubmit={onSubmit}
                 /> */}
-                  bruno619reyes@gmail.com
-                </a>{' '}
-                if you have any questions or want to set up a time to chat.
-                <br></br> <br></br>
+                {/* </a>{' '} */}
+                <br></br>
+                {/* <Button
+                  className={
+                    this.state.darkMode
+                      ? classes.projectsButtonLight
+                      : classes.projectsButton
+                  }
+                  onClick={this.handleClickOpen}
+                >
+                  Send Message
+                </Button> */}
+                {/* {this.state.modal ? : <></>} */}
+                <Dialog
+                  open={this.state.dialog}
+                  onClose={this.handleClose}
+                  aria-labelledby="form-dialog-title"
+                >
+                  <DialogTitle className={classes.dialogTitle}>
+                    <span className={classes.dialogMessage}>Let's Chat</span>
+                  </DialogTitle>
+                  <DialogContent onSubmit={this.sendEmail}>
+                    {/* <DialogContentText>
+                      To subscribe to this website, please enter your email
+                      address here. We will send updates occasionally.
+                    </DialogContentText> */}
+
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      label={
+                        <span className={classes.dialogLabels}>
+                          Email Address
+                        </span>
+                      }
+                      name="user_email"
+                      type="email"
+                      fullWidth
+                      variant="outlined"
+                    />
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      label={
+                        <span className={classes.dialogLabels}>Full Name</span>
+                      }
+                      name="user_name"
+                      type="text"
+                      fullWidth
+                      variant="outlined"
+                    />
+                    <TextField
+                      autoFocus
+                      variant="outlined"
+                      margin="dense"
+                      label={
+                        <span className={classes.dialogLabels}>Message</span>
+                      }
+                      name="message"
+                      type="text"
+                      fullWidth
+                      multiline
+                      rows={4}
+                    />
+                  </DialogContent>
+                  <DialogActions>
+                    <Button
+                      onClick={this.handleClose}
+                      className={classes.dialogButton}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      onClick={this.handleClose}
+                      className={classes.dialogButton}
+                      type="submit"
+                      value="Send"
+                    >
+                      Send
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </p>
               <div
                 className={
@@ -170,6 +342,7 @@ class HomePage extends Component {
                   >
                     <img
                       src="/social_media_logo_medium-512.png"
+                      alt="medium logo"
                       className={classes.mediumIcon}
                     ></img>
                   </a>
@@ -193,260 +366,263 @@ class HomePage extends Component {
                   {this.state.darkMode ? (
                     <WbSunnyIcon
                       onClick={this.toggleDarkMode}
-                      className={classes.darkMode}
+                      className={classes.darkModeIcon}
                     />
                   ) : (
                     <Brightness3Icon
                       onClick={this.toggleDarkMode}
-                      className={classes.darkMode}
+                      className={classes.darkModeIcon}
                     />
                   )}
                 </div>
               </div>{' '}
             </Fade>
           </Grid>
-
           <Grid
             item
             className={classes.contentRight}
             xs={12}
             sm={12}
-            md={12}
+            md={6}
             lg={6}
+            xl={8}
+          ></Grid>
+          {/* <Grid
+            item
+            className={classes.contentRight}
+            xs={0}
+            sm={0}
+            md={0}
+            lg={0}
           >
-            <Fade>
-              {this.state.darkMode ? (
-                <img
-                  alt="Bruno Reyes"
-                  src="images/bruno_9452.jpg"
-                  className={classes.profilePicture}
-                  // onClick={this.toggleDarkMode}
-                ></img>
-              ) : (
-                <img
-                  alt="Bruno Reyes Logo"
-                  className={classes.logoPicture}
-                  // onClick={this.toggleDarkMode}
-                  src="https://tinyurl.com/yxnwsqfk"
-                ></img>
-              )}
-              <h1
+            {this.state.darkMode ? (
+              <img
+                alt="Bruno Reyes"
+                src="images/bruno_9452.jpg"
+                className={classes.profilePicture}
+                // onClick={this.toggleDarkMode}
+              ></img>
+            ) : (
+              <img
+                alt="Bruno Reyes Logo"
+                className={classes.logoPicture}
+                // onClick={this.toggleDarkMode}
+                src="https://tinyurl.com/yxnwsqfk"
+              ></img>
+            )}
+
+            <h1
+              className={
+                this.state.darkMode
+                  ? classes.projectsHeaderLight
+                  : classes.projectsHeader
+              }
+            >
+              Projects
+            </h1>
+
+            <div className={classes.GridListRoot}>
+              <GridList
+                cols={1.5}
+                cellHeight={'90%'}
                 className={
-                  this.state.darkMode
-                    ? classes.projectsHeaderLight
-                    : classes.projectsHeader
+                  this.state.darkMode ? classes.gridListLight : classes.gridList
                 }
               >
-                Projects
-              </h1>
-              <div className={classes.GridListRoot}>
-                {/* cellHeight controls the height of each tile */}
-                <GridList
-                  cols={1.5}
-                  cellHeight={500}
-                  className={
-                    this.state.darkMode
-                      ? classes.gridListLight
-                      : classes.gridList
-                  }
-                >
-                  <GridListTile className={classes.gridListTile}>
-                    <div className={classes.projectContainerOne}>
-                      {' '}
-                      <Fade up when={this.state.show}>
-                        <h3
-                          className={
-                            this.state.darkMode
-                              ? classes.projectTitleLight
-                              : classes.projectTitle
-                          }
-                        >
-                          TODO
-                        </h3>
-                      </Fade>
-                      {/* <div className={classes.imageTextContainer}> */}
-                      <img
-                        alt="TODO app"
+                <GridListTile className={classes.gridListTile}>
+                  <div className={classes.projectContainerOne}> */}
+          {/* <Fade up when={this.state.show1}>
+                      <h3
                         className={
                           this.state.darkMode
-                            ? classes.projectPictureLight
-                            : classes.projectPicture
+                            ? classes.projectTitleLight
+                            : classes.projectTitle
                         }
-                        onClick={this.toggleShowProjectText}
-                        src="https://tinyurl.com/yxdammdx"
-                      ></img>
-                      <div className={classes.overlay}></div>
-                      <Fade down when={this.state.show}>
-                        <p
-                          className={
-                            this.state.darkMode
-                              ? classes.projectDescriptionLight
-                              : classes.projectDescription
-                          }
-                        >
-                          TODO, in Spanish meaning "all", manages all of a
-                          user's tasks, reminders, ideas & memories.
-                        </p>{' '}
-                      </Fade>
-                      <a
-                        href="https://github.com/brunoreyes/TODO-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={classes.hrefLink}
                       >
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          className={classes.button}
-                          className={
-                            this.state.darkMode
-                              ? classes.buttonLight
-                              : classes.button
-                          }
-                          endIcon={
-                            <GitHubIcon className={classes.projectSocialIcon}>
-                              <span className={classes.buttonText}>
-                                Explore
-                              </span>
-                            </GitHubIcon>
-                          }
-                        >
-                          Explore
-                        </Button>{' '}
-                      </a>
-                    </div>
-                  </GridListTile>
-                  <GridListTile className={classes.gridListTile}>
-                    <div className={classes.projectContainerOne}>
-                      {' '}
-                      <Fade up when={this.state.show}>
-                        <h3
-                          className={
-                            this.state.darkMode
-                              ? classes.projectTitleLight
-                              : classes.projectTitle
-                          }
-                        >
-                          UNiQUE
-                        </h3>
-                      </Fade>
-                      {/* <div className={classes.imageTextContainer}> */}
-                      <img
-                        alt="unique mobile app"
-                        className={
-                          this.state.darkMode
-                            ? classes.projectPictureLight
-                            : classes.projectPicture
-                        }
-                        onClick={this.toggleShowProjectText}
-                        src="public/images/realmMobile.png"
-                      ></img>
-                      <div className={classes.overlay}></div>
-                      <Fade down when={this.state.show}>
-                        <p
-                          className={
-                            this.state.darkMode
-                              ? classes.projectDescriptionLight
-                              : classes.projectDescription
-                          }
-                        >
-                          TODO, in Spanish meaning "all", manages all of a
-                          user's tasks, reminders, ideas & memories.
-                        </p>{' '}
-                      </Fade>
-                      <a
-                        href="https://github.com/brunoreyes/TODO-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={classes.hrefLink}
-                      >
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          className={classes.button}
-                          className={
-                            this.state.darkMode
-                              ? classes.buttonLight
-                              : classes.button
-                          }
-                          endIcon={
-                            <GitHubIcon className={classes.projectSocialIcon}>
-                              <span className={classes.buttonText}>
-                                Explore
-                              </span>
-                            </GitHubIcon>
-                          }
-                        >
-                          Explore
-                        </Button>{' '}
-                      </a>
-                    </div>
-                  </GridListTile>
-
-                  <GridListTile className={classes.gridListTile}>
-                    <div className={classes.projectContainerTwo}>
-                      {/* <Paper elevation={3} className={classes.projectPaper}> */}
-
-                      <h3 className={classes.projectTitle}>
-                        Server-Side Calculator
+                        UNiQUE
                       </h3>
-                      <div className={classes.imageTextContainer}>
-                        <img
-                          className={classes.projectPicture}
-                          src="https://tinyurl.com/yyu4pp2p"
-                          alt="Server-Side Calculator"
-                        ></img>
-                        <div className={classes.overlay}>
-                          <a
-                            href="https://github.com/brunoreyes/TODO-app"
-                            target="_blank"
-                            alt="TODO app"
-                            rel="noopener noreferrer"
-                            className={classes.hrefLink}
-                          >
-                            {' '}
-                            <div className={classes.imageText}>
-                              View Project On
-                              <GitHubIcon
-                                className={classes.projectSocialIcon}
-                              />
-                            </div>
-                          </a>
-                        </div>
-                        {/* <p className={classes.projectDescription}>
-                            Spanish for 'all', TODO is an application that
-                            allows users to manage all of their tasks,
-                            reminders, ideas, and memories.
-                          </p> */}
-                      </div>
-                      {/* </Paper> */}
-                    </div>
-                  </GridListTile>
+                      </Fade>*/}
+          {/* <div className={classes.imageTextContainer}> */}
+          {/* <img
+                      alt="unique mobile app"
+                      className={
+                        this.state.darkMode
+                          ? classes.projectPictureLightMobile
+                          : classes.projectPictureMobile
+                      }
+                      onClick={this.toggleProjectText1}
+                      src="https://tinyurl.com/y2j2nmu6"
+                    ></img>
 
-                  <GridListTile cols={1}>
-                    <div className={classes.projectContainerTwo}>
+                    <Fade down when={this.state.show1}>
+                      <h3
+                        className={
+                          this.state.darkMode
+                            ? classes.projectTitleLight
+                            : classes.projectTitle
+                        }
+                      >
+                        UNiQUE
+                      </h3>
+                      <p
+                        className={
+                          this.state.darkMode
+                            ? classes.projectDescriptionLightMobile
+                            : classes.projectDescriptionMobile
+                        }
+                      >
+                        Unique is a mobile/desktop education app that allows
+                        users to engage with content and admins to download data
+                        and continuously modify content.
+                      </p>
+                    </Fade>
+                    <a
+                      href="https://github.com/brunoreyes/TODO-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={classes.hrefLink}
+                    >
+                      <Button
+                        variant="contained" */}
+          {/* // color="primary"
+                        className={
+                          this.state.darkMode
+                            ? classes.buttonLight
+                            : classes.button
+                        }
+                        endIcon={
+                          <GitHubIcon className={classes.projectSocialIcon}>
+                            <span className={classes.buttonText}>Explore</span>
+                          </GitHubIcon>
+                        }
+                      >
+                        Explore
+                      </Button>
+                    </a>
+                  </div>
+                </GridListTile>
+                <GridListTile className={classes.gridListTile}>
+                  <div className={classes.projectContainerOne}>
+                    <Fade up when={this.state.show2}>
+                      <h3
+                        className={
+                          this.state.darkMode
+                            ? classes.projectTitleLight
+                            : classes.projectTitle
+                        }
+                      >
+                        TODO
+                      </h3>
+                    </Fade> */}
+          {/* <div className={classes.imageTextContainer}> */}
+          {/* <img
+                      alt="TODO app"
+                      className={
+                        this.state.darkMode
+                          ? classes.projectPictureLight
+                          : classes.projectPicture
+                      }
+                      onClick={this.toggleProjectText2}
+                      src="https://tinyurl.com/yxdammdx"
+                    ></img> */}
+          {/* <div className={classes.overlay}></div> */}
+          {/* <Fade down when={this.state.show2}>
+                      <p
+                        className={
+                          this.state.darkMode
+                            ? classes.projectDescriptionLight
+                            : classes.projectDescription
+                        }
+                      >
+                        TODO, in Spanish meaning "all", manages all of a user's
+                        tasks, reminders, ideas & memories.
+                      </p>{' '}
+                    </Fade>
+                    <a
+                      href="https://github.com/brunoreyes/TODO-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={classes.hrefLink}
+                    >
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        className={
+                          this.state.darkMode
+                            ? classes.buttonLight
+                            : classes.button
+                        }
+                        endIcon={
+                          <GitHubIcon className={classes.projectSocialIcon}>
+                            <span className={classes.buttonText}>Explore</span>
+                          </GitHubIcon>
+                        }
+                      >
+                        Explore
+                      </Button>{' '}
+                    </a>
+                  </div>
+                </GridListTile> */}
+          {/* <GridListTile className={classes.gridListTile}>
+                  <div className={classes.projectContainerTwo}> */}
+          {/* <Paper elevation={3} className={classes.projectPaper}> */}
+          {/* <h3 className={classes.projectTitle}>
+                      Server-Side Calculator
+                    </h3>
+                    <div className={classes.imageTextContainer}>
                       <img
                         className={classes.projectPicture}
                         src="https://tinyurl.com/yyu4pp2p"
                         alt="Server-Side Calculator"
                       ></img>
-                      {/* </Paper> */}
-                    </div>
-                  </GridListTile>
-                  <GridListTile>
-                    <div className={classes.projectContainerThree}>
-                      <img
-                        className={classes.projectPicture}
-                        src="https://tinyurl.com/yyd7ffm7"
-                        alt="Server-Side Calculator"
-                      ></img>
-                      {/* </Paper> */}
-                    </div>
-                  </GridListTile>
-                </GridList>
-              </div>
-            </Fade>
-          </Grid>
+                      <div className={classes.overlay}>
+                        <a
+                          href="https://github.com/brunoreyes/TODO-app"
+                          target="_blank"
+                          alt="TODO app"
+                          rel="noopener noreferrer"
+                          className={classes.hrefLink}
+                        >
+                          {' '}
+                          <div className={classes.imageText}>
+                            View Project On
+                            <GitHubIcon className={classes.projectSocialIcon} />
+                          </div>
+                        </a>
+                      </div> */}
+          {/* <p className={classes.projectDescription}>
+                          Spanish for 'all', TODO is an application that
+                          allows users to manage all of their tasks,
+                          reminders, ideas, and memories.
+                        </p> */}
+          {/* </div> */}
+          {/* </Paper> */}
+          {/* </div>
+                </GridListTile>
+
+                <GridListTile cols={1}>
+                  <div className={classes.projectContainerTwo}>
+                    <img
+                      className={classes.projectPicture}
+                      src="https://tinyurl.com/yyu4pp2p"
+                      alt="Server-Side Calculator"
+                    ></img> */}
+          {/* </Paper> */}
+          {/* </div>
+                </GridListTile>
+                <GridListTile>
+                  <div className={classes.projectContainerThree}>
+                    <img
+                      className={classes.projectPicture}
+                      src="https://tinyurl.com/yyd7ffm7"
+                      alt="Server-Side Calculator"
+                    ></img>
+                    {/* </Paper> */}
+          {/* </div>
+                </GridListTile>
+              </GridList>
+            </div>
+          </Grid> */}{' '}
         </Grid>
       </div>
     );
