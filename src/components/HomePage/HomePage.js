@@ -310,7 +310,7 @@ class HomePage extends Component {
                     }
                   >
                     <img
-                      src="../../../public/images/social_media_logo_medium-512.png"
+                      src="../../../public/images/medium.png"
                       alt="medium logo"
                       className={classes.mediumIcon}
                     ></img>
