@@ -147,19 +147,20 @@ class HomePage extends Component {
                 }
               >
                 <br></br> <br></br>I'm a software engineer based in the Twin
-                Cities and a recent graduate of Prime Digital Academy. I have
-                developed projects using React, Redux, Sagas, Node.js, Ajax,
-                Express, PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to
-                coding, I held various roles within UX and marketing for 4+
-                years, creating websites, social media platforms, photography
-                and editing, branding kits, promotional campaigns, templates,
-                usability reports, and market research. I chose to learn
-                full-stack development to be able to build out user-centered
-                designs into fully functional applications and to learn how my
-                designs affect developers, designers and stakeholders alike.
-                When I'm not creating or designing products, I enjoy exploring
-                new foods, locations, activities and cultures as well as sharing
-                ideas. <br></br> <br></br>
+                Cities. I am a recently graduate of the University of Minnesota
+                and Prime Digital Academy. I have developed projects using
+                React, Redux, Sagas, Node.js, Ajax, Express, PostgreSQL, SQL,
+                jQuery, AWS S3, and CSS. Prior to coding, I held various roles
+                within UX and marketing for 4+ years, creating websites, social
+                media platforms, photography and editing, branding kits,
+                promotional campaigns, templates, usability reports, and market
+                research. I chose to learn full-stack development to be able to
+                build out user-centered designs into fully functional
+                applications and to learn how my designs affect developers,
+                designers and stakeholders alike. When I'm not creating or
+                designing products, I enjoy exploring new foods, locations,
+                activities and cultures as well as sharing ideas. <br></br>{' '}
+                <br></br>
                 Download my{' '}
                 <a
                   href="resume-Bruno_Reyes.pdf"
@@ -176,7 +177,7 @@ class HomePage extends Component {
                     resume
                   </span>
                 </a>
-                <span> </span> or email me at{' '}
+                <span> </span> or email me at
                 <a
                   href="mailto:bruno619reyes@gmail.com"
                   className={
@@ -189,7 +190,6 @@ class HomePage extends Component {
                 </a>{' '}
                 <br></br>
                 if you have any questions or want to set up a time to chat.
-              
                 {/* <Container
                   className={classes.formContainer}
                   triggerText={triggerText}
