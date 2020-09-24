@@ -196,7 +196,7 @@ class HomePage extends Component {
                 /> */}
                 {/* </a>{' '} */}
                 <br></br>
-                {/* <Button
+                <Button
                   className={
                     this.state.darkMode
                       ? classes.projectsButtonLight
@@ -205,7 +205,7 @@ class HomePage extends Component {
                   onClick={this.handleClickOpen}
                 >
                   Send Message
-                </Button> */}
+                </Button>
                 <Dialog
                   open={this.state.dialog}
                   onClose={this.handleClose}
@@ -214,7 +214,13 @@ class HomePage extends Component {
                   <DialogTitle className={classes.dialogTitle}>
                     <span className={classes.dialogMessage}>Let's Chat</span>
                   </DialogTitle>
-                  <DialogContent onSubmit={this.sendEmail}>
+                  <DialogContent
+                    onSubmit={this.sendEmail}
+                    class="gform"
+                    method="POST"
+                    data-email="bruno619reyes@gmail.com"
+                    action="https://script.google.com/macros/s/AKfycbyIkL9_AdvXI5fFFL0F4RZeWpsuKjuBQhAn0d3-/exec"
+                  >
                     {/* <DialogContentText>
                       To subscribe to this website, please enter your email
                       address here. We will send updates occasionally.
