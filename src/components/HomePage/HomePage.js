@@ -139,20 +139,20 @@ class HomePage extends Component {
                 }
               >
                 {/* I uploaded images via the images folder and accessed their links through Github */}
-                Hola, I'm Bruno.{' '}
+                Hola, {window.screen.width > 390 ? <></> : <br></br>}I'm Bruno.{' '}
               </h1>
               <p
                 className={
                   this.state.darkMode ? classes.storyLight : classes.story
                 }
               >
-                <br></br> <br></br>I'm a software engineer and recently graduate
+                <br></br> <br></br>I'm a software engineer and recent graduate
                 of the University of Minnesota and Prime Digital Academy. I have
                 developed projects using React, Redux, Sagas, Node.js, Ajax,
                 Express, PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to
-                coding, I held various roles within UX and marketing for 4+
-                years, creating websites, social media platforms, photography
-                and editing, branding kits, promotional campaigns, templates,
+                coding, I held various roles within UX and marketing for four
+                years creating websites, social media platforms, photography and
+                photo editing, branding kits, promotional campaigns, templates,
                 usability reports, and market research. I chose to learn
                 full-stack development to be able to build out user-centered
                 designs into fully functional applications and to learn how my
@@ -176,17 +176,18 @@ class HomePage extends Component {
                     resume
                   </span>
                 </a>
-                <span> </span> or email me at <span> </span>
-                <a
+                <span> </span> or message me at
+                <span> </span>
+                {/*  <a
                   href="mailto:bruno619reyes@gmail.com"
                   className={
                     this.state.darkMode
                       ? classes.underlineLight
                       : classes.underline
                   }
-                >
-                  bruno619reyes@gmail.com
-                </a>{' '}
+                > */}
+                bruno619reyes@gmail.com
+                {/* </a>{' '} */}
                 <br></br>
                 if you have any questions or want to set up a time to chat.
                 {/* <Container
@@ -211,75 +212,96 @@ class HomePage extends Component {
                   onClose={this.handleClose}
                   aria-labelledby="form-dialog-title"
                 >
-                  <DialogTitle className={classes.dialogTitle}>
-                    <span className={classes.dialogMessage}>Let's Chat</span>
-                  </DialogTitle>
-                  <DialogContent
+                  {' '}
+                  <form
                     onSubmit={this.sendEmail}
-                    class="gform"
+                    className="gform pure-form pure-form-stacked"
                     method="POST"
                     data-email="bruno619reyes@gmail.com"
                     action="https://script.google.com/macros/s/AKfycbyIkL9_AdvXI5fFFL0F4RZeWpsuKjuBQhAn0d3-/exec"
                   >
-                    {/* <DialogContentText>
+                    <DialogTitle className={classes.dialogTitle}>
+                      <span className={classes.dialogMessage}>Let's Chat</span>
+                    </DialogTitle>
+                    <DialogContent>
+                      {/* <DialogContentText>
                       To subscribe to this website, please enter your email
                       address here. We will send updates occasionally.
                     </DialogContentText> */}
-
-                    <TextField
-                      autoFocus
-                      margin="dense"
-                      label={
-                        <span className={classes.dialogLabels}>
-                          Email Address
-                        </span>
-                      }
-                      name="user_email"
-                      type="email"
-                      fullWidth
-                      variant="outlined"
-                    />
-                    <TextField
-                      autoFocus
-                      margin="dense"
-                      label={
-                        <span className={classes.dialogLabels}>Full Name</span>
-                      }
-                      name="user_name"
-                      type="text"
-                      fullWidth
-                      variant="outlined"
-                    />
-                    <TextField
-                      autoFocus
-                      variant="outlined"
-                      margin="dense"
-                      label={
-                        <span className={classes.dialogLabels}>Message</span>
-                      }
-                      name="message"
-                      type="text"
-                      fullWidth
-                      multiline
-                      rows={4}
-                    />
-                  </DialogContent>
-                  <DialogActions>
-                    <Button
-                      onClick={this.handleClose}
-                      className={classes.dialogButton}
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      onClick={this.handleClose}
-                      className={classes.dialogButton}
-                      type="submit"
-                      value="Send"
-                    >
-                      Send
-                    </Button>
-                  </DialogActions>
+                      <div className="form-elements">
+                        <TextField
+                          autoFocus
+                          margin="dense"
+                          label={
+                            <span className={classes.dialogLabels}>
+                              Email Address
+                            </span>
+                          }
+                          name="email"
+                          id="email"
+                          type="email"
+                          fullWidth
+                          variant="outlined"
+                          className="pure-group"
+                        />
+                        <TextField
+                          autoFocus
+                          margin="dense"
+                          label={
+                            <span className={classes.dialogLabels}>
+                              Full Name
+                            </span>
+                          }
+                          id="name"
+                          name="name"
+                          type="text"
+                          fullWidth
+                          variant="outlined"
+                          className="pure-group"
+                        />
+                        <TextField
+                          autoFocus
+                          variant="outlined"
+                          margin="dense"
+                          label={
+                            <span className={classes.dialogLabels}>
+                              Message
+                            </span>
+                          }
+                          name="message"
+                          id="message"
+                          type="text"
+                          fullWidth
+                          multiline
+                          rows={4}
+                          className="pure-group"
+                        />
+                      </div>
+                      {/* <div style="display:none" className="thankyou_message">
+                        {/* <!-- You can customize the thankyou message by editing the code below --> */}
+                      {/* <h2>
+                          <em>Thanks</em> for contacting us! We will get back to
+                          you soon!
+                        </h2>
+                      </div> */}{' '}
+                    </DialogContent>
+                    <DialogActions>
+                      <Button
+                        onClick={this.handleClose}
+                        className={classes.dialogButton}
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        onClick={this.handleClose}
+                        className={classes.dialogButtonRight}
+                        type="submit"
+                        value="Send"
+                      >
+                        Send
+                      </Button>
+                    </DialogActions>
+                  </form>
                 </Dialog>
               </p>
               <div
