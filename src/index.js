@@ -6,9 +6,10 @@ import * as serviceWorker from './serviceWorker';
 // RESTART sever after making changes in index.js
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>,
+  </React.Fragment>,
+
   document.getElementById('root')
 );
 
@@ -16,3 +17,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+/* <React.StrictMode> */
+/* </React.StrictMode> */

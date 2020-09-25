@@ -13,6 +13,7 @@ import {
   // GridList,
   // GridListTile,
   // IconButton,
+  // Hidden,
 } from '@material-ui/core';
 
 import Brightness3Icon from '@material-ui/icons/Brightness3';
@@ -22,18 +23,14 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Fade from 'react-reveal/Fade';
 import styles from '../themes/homeTheme';
 import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-//
 
 class HomePage extends Component {
   state = {
     darkMode: false,
     // toggleLogo: false,
     dialog: false,
+    messageMode: false,
+    sentMode: false,
     // show1: false,
     // show2: false,
     // show3: false,
@@ -47,6 +44,12 @@ class HomePage extends Component {
       darkMode: !this.state.darkMode,
     });
   };
+  turnOffDarkMode = () => {
+    // console.log('You clicked the preview icon');
+    this.setState({
+      darkMode: false,
+    });
+  };
   // toggleModal = () => {
   //   // console.log('You clicked the preview icon');
   //   this.setState({
@@ -55,12 +58,16 @@ class HomePage extends Component {
   // };
 
   handleClickOpen = () => {
-    this.setState({ dialog: true });
+    this.setState({ messageMode: !this.state.messageMode });
   };
 
   handleClose = () => {
-    this.setState({ dialog: false });
+    this.setState({ messageMode: false });
     console.log('cancel');
+  };
+  handleSend = () => {
+    this.setState({ sentMode: true });
+    console.log('sent');
   };
 
   // toggleLogo = () => {
@@ -102,13 +109,6 @@ class HomePage extends Component {
   render() {
     const { classes } = this.props;
 
-    // const triggerText = 'send a message';
-    // const onSubmit = (event) => {
-    //   event.preventDefault(event);
-    //   console.log(event.target.name.value);
-    //   console.log(event.target.email.value);
-    // };
-
     return (
       <div
         // className={classes.root}
@@ -121,8 +121,8 @@ class HomePage extends Component {
           spacing={0}
         >
           <Grid
-            item
             className={classes.content}
+            item
             xs={12}
             sm={12}
             md={6}
@@ -131,258 +131,345 @@ class HomePage extends Component {
           >
             {' '}
             <Fade>
-              <h1
-                className={
-                  this.state.darkMode
-                    ? classes.introductionLight
-                    : classes.introduction
-                }
-              >
-                {/* I uploaded images via the images folder and accessed their links through Github */}
-                Hola, {window.screen.width > 390 ? <></> : <br></br>}I'm Bruno.{' '}
-              </h1>
-              <p
-                className={
-                  this.state.darkMode ? classes.storyLight : classes.story
-                }
-              >
-                <br></br> <br></br>I'm a software engineer and recent graduate
-                of the University of Minnesota and Prime Digital Academy. I have
-                developed projects using React, Redux, Sagas, Node.js, Ajax,
-                Express, PostgreSQL, SQL, jQuery, AWS S3, and CSS. Prior to
-                coding, I held various roles within UX and marketing for four
-                years creating websites, social media platforms, photography and
-                photo editing, branding kits, promotional campaigns, templates,
-                usability reports, and market research. I chose to learn
-                full-stack development to be able to build out user-centered
-                designs into fully functional applications and to learn how my
-                designs affect developers, designers and stakeholders alike.
-                When I'm not creating or designing products, I enjoy exploring
-                new foods, locations, activities and cultures as well as sharing
-                ideas. <br></br> <br></br>
-                Download my{' '}
-                <a
-                  href="resume-Bruno_Reyes.pdf"
-                  target="_blank"
-                  className={classes.hrefLink}
-                >
-                  <span
+              {' '}
+              {this.state.messageMode ? (
+                <></>
+              ) : (
+                <>
+                  <h1
                     className={
                       this.state.darkMode
-                        ? classes.underlineLight
-                        : classes.underline
+                        ? classes.introductionLight
+                        : classes.introduction
                     }
                   >
-                    resume
-                  </span>
-                </a>
-                <span> </span> or message me at
-                <span> </span>
-                {/*  <a
-                  href="mailto:bruno619reyes@gmail.com"
-                  className={
-                    this.state.darkMode
-                      ? classes.underlineLight
-                      : classes.underline
-                  }
-                > */}
-                bruno619reyes@gmail.com
-                {/* </a>{' '} */}
-                <br></br>
-                if you have any questions or want to set up a time to chat.
-                {/* <Container
-                  className={classes.formContainer}
-                  triggerText={triggerText}
-                  onSubmit={onSubmit}
-                /> */}
-                {/* </a>{' '} */}
-                <br></br>
-                <Button
-                  className={
-                    this.state.darkMode
-                      ? classes.projectsButtonLight
-                      : classes.projectsButton
-                  }
-                  onClick={this.handleClickOpen}
-                >
-                  Send Message
-                </Button>
-                <Dialog
-                  open={this.state.dialog}
-                  onClose={this.handleClose}
-                  aria-labelledby="form-dialog-title"
-                >
-                  {' '}
+                    {/* I uploaded images via the images folder and accessed their links through Github */}
+                    Hola, {window.screen.width > 390 ? <></> : <br></br>}I'm
+                    Bruno.{' '}
+                  </h1>
+                  <p
+                    className={
+                      this.state.darkMode ? classes.storyLight : classes.story
+                    }
+                  >
+                    <br></br> <br></br>I'm a software engineer and recent
+                    graduate of the University of Minnesota and Prime Digital
+                    Academy. I have developed projects using React, Redux,
+                    Sagas, Node.js, Ajax, Express, PostgreSQL, SQL, jQuery, AWS
+                    S3, and CSS. Prior to coding, I held various roles within UX
+                    and marketing for four years creating websites, social media
+                    platforms, photography and photo editing, branding kits,
+                    promotional campaigns, templates, usability reports, and
+                    market research. I chose to learn full-stack development to
+                    be able to build out user-centered designs into fully
+                    functional applications and to learn how my designs affect
+                    developers, designers and stakeholders alike. When I'm not
+                    creating or designing products, I enjoy exploring new foods,
+                    locations, activities and cultures as well as sharing ideas.{' '}
+                    <br></br> <br></br>
+                    Download my{' '}
+                    <a
+                      href="resume-Bruno_Reyes.pdf"
+                      target="_blank"
+                      className={classes.hrefLink}
+                    >
+                      <span
+                        className={
+                          this.state.darkMode
+                            ? classes.underlineLight
+                            : classes.underline
+                        }
+                      >
+                        resume
+                      </span>
+                    </a>
+                    <span> </span> or message me at
+                    <span> </span>
+                    bruno619reyes@gmail.com
+                    <br></br>
+                    if you have any questions or want to set up a time to chat.
+                    <br></br>
+                    {this.state.sentMode ? (
+                      <Fade>
+                        <p
+                          className={
+                            this.state.darkMode
+                              ? classes.sentMessageLight
+                              : classes.sentMessage
+                          }
+                        >
+                          Your message has been successfully sent <br></br> and
+                          will be responded to shortly.
+                        </p>
+                      </Fade>
+                    ) : (
+                      <Button
+                        className={
+                          this.state.darkMode
+                            ? classes.projectsButtonLight
+                            : classes.projectsButton
+                        }
+                        onClick={this.handleClickOpen}
+                      >
+                        Send Message
+                      </Button>
+                    )}
+                  </p>
+                  <div
+                    className={
+                      this.state.darkMode
+                        ? classes.socialIconsContainerLight
+                        : classes.socialIconsContainer
+                    }
+                  >
+                    <div className={classes.linkedinSocialIconContainer}>
+                      <a
+                        href="https://www.linkedin.com/in/brunoreyes/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          this.state.darkMode
+                            ? classes.hrefLinkLight
+                            : classes.hrefLink
+                        }
+                      >
+                        <LinkedInIcon className={classes.linkedinSocialIcons} />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://medium.com/@bruno619reyes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          this.state.darkMode
+                            ? classes.hrefLinkLight
+                            : classes.hrefLink
+                        }
+                      >
+                        <img
+                          src="https://tinyurl.com/yx96xdko"
+                          alt="medium logo"
+                          className={classes.mediumIcon}
+                        ></img>
+                      </a>
+                    </div>
+                    <div>
+                      {' '}
+                      <a
+                        href="https://github.com/brunoreyes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          this.state.darkMode
+                            ? classes.hrefLinkLight
+                            : classes.hrefLink
+                        }
+                      >
+                        <GitHubIcon className={classes.githubSocialIcons} />
+                      </a>
+                    </div>
+                    <div>
+                      {this.state.darkMode ? (
+                        <WbSunnyIcon
+                          onClick={this.toggleDarkMode}
+                          className={classes.darkModeIcon}
+                        />
+                      ) : (
+                        <Brightness3Icon
+                          onClick={this.toggleDarkMode}
+                          className={classes.darkModeIcon}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+              <div style={this.state.messageMode ? {} : { display: 'none' }}>
+                <div className={classes.form}>
                   <form
                     onSubmit={this.sendEmail}
-                    className="gform pure-form pure-form-stacked"
+                    className="gform "
                     method="POST"
                     data-email="bruno619reyes@gmail.com"
-                    action="https://script.google.com/macros/s/AKfycbyIkL9_AdvXI5fFFL0F4RZeWpsuKjuBQhAn0d3-/exec"
+                    action="https://script.google.com/macros/s/AKfycbxtcbHlRFTg6H0rcFU2dNnHZNdyabfR3uKLE7Tv06TyA71Cy6Y/exec"
                   >
-                    <DialogTitle className={classes.dialogTitle}>
-                      <span className={classes.dialogMessage}>Let's Chat</span>
-                    </DialogTitle>
-                    <DialogContent>
-                      {/* <DialogContentText>
-                      To subscribe to this website, please enter your email
-                      address here. We will send updates occasionally.
-                    </DialogContentText> */}
-                      <div className="form-elements">
-                        <TextField
-                          autoFocus
-                          margin="dense"
-                          label={
-                            <span className={classes.dialogLabels}>
-                              Email Address
-                            </span>
-                          }
-                          name="email"
-                          id="email"
-                          type="email"
-                          fullWidth
-                          variant="outlined"
-                          className="pure-group"
-                        />
-                        <TextField
-                          autoFocus
-                          margin="dense"
-                          label={
-                            <span className={classes.dialogLabels}>
-                              Full Name
-                            </span>
-                          }
-                          id="name"
-                          name="name"
-                          type="text"
-                          fullWidth
-                          variant="outlined"
-                          className="pure-group"
-                        />
-                        <TextField
-                          autoFocus
-                          variant="outlined"
-                          margin="dense"
-                          label={
-                            <span className={classes.dialogLabels}>
-                              Message
-                            </span>
-                          }
-                          name="message"
-                          id="message"
-                          type="text"
-                          fullWidth
-                          multiline
-                          rows={4}
-                          className="pure-group"
-                        />
-                      </div>
-                      {/* <div style="display:none" className="thankyou_message">
-                        {/* <!-- You can customize the thankyou message by editing the code below --> */}
-                      {/* <h2>
-                          <em>Thanks</em> for contacting us! We will get back to
-                          you soon!
-                        </h2>
-                      </div> */}{' '}
-                    </DialogContent>
-                    <DialogActions>
+                    {' '}
+                    <span
+                      className={
+                        this.state.darkMode
+                          ? classes.dialogTitleLight
+                          : classes.dialogTitle
+                      }
+                    >
+                      Let's Chat
+                    </span>
+                    <div className="form-elements" id="form-elements">
+                      <TextField
+                        autoFocus
+                        margin="dense"
+                        label={
+                          <span
+                            className={
+                              this.state.darkMode
+                                ? classes.dialogLabelsLight
+                                : classes.dialogLabels
+                            }
+                          >
+                            Email Address
+                          </span>
+                        }
+                        name="email"
+                        id="email"
+                        type="email"
+                        fullWidth
+                        variant="outlined"
+                        className="pure-group"
+                        InputProps={
+                          this.state.darkMode
+                            ? {
+                                classes: {
+                                  notchedOutline: classes.notchedOutlineLight,
+                                },
+                              }
+                            : {
+                                classes: {
+                                  notchedOutline: classes.notchedOutline,
+                                },
+                              }
+                        }
+                      />
+                      <TextField
+                        autoFocus
+                        margin="dense"
+                        label={
+                          <span
+                            className={
+                              this.state.darkMode
+                                ? classes.dialogLabelsLight
+                                : classes.dialogLabels
+                            }
+                          >
+                            Name
+                          </span>
+                        }
+                        id="name"
+                        name="name"
+                        type="text"
+                        fullWidth
+                        variant="outlined"
+                        className="pure-group"
+                        InputProps={
+                          this.state.darkMode
+                            ? {
+                                classes: {
+                                  notchedOutline: classes.notchedOutlineLight,
+                                },
+                              }
+                            : {
+                                classes: {
+                                  notchedOutline: classes.notchedOutline,
+                                },
+                              }
+                        }
+                      />
+                      <TextField
+                        autoFocus
+                        variant="outlined"
+                        margin="dense"
+                        label={
+                          <span
+                            className={
+                              this.state.darkMode
+                                ? classes.dialogLabelsLight
+                                : classes.dialogLabels
+                            }
+                          >
+                            Message
+                          </span>
+                        }
+                        name="message"
+                        id="message"
+                        type="text"
+                        fullWidth
+                        multiline
+                        rows={4}
+                        className="pure-group"
+                        InputProps={
+                          this.state.darkMode
+                            ? {
+                                classes: {
+                                  notchedOutline: classes.notchedOutlineLight,
+                                },
+                              }
+                            : {
+                                classes: {
+                                  notchedOutline: classes.notchedOutline,
+                                },
+                              }
+                        }
+                      />
+                      <input
+                        id="honeypot"
+                        type="text"
+                        name="honeypot"
+                        className="pure-group honeypot-field"
+                        hidden
+                      />
+                      {/* {JSON.stringify(this.props.task.id)} */}
+                    </div>
+                    {/* </DialogContent> */}
+                    {/* <DialogActions> */}
+                    <div className={classes.dialogButtonContainer}>
                       <Button
                         onClick={this.handleClose}
-                        className={classes.dialogButton}
+                        className={
+                          this.state.darkMode
+                            ? classes.dialogButtonLight
+                            : classes.dialogButton
+                        }
                       >
                         Cancel
                       </Button>
                       <Button
-                        onClick={this.handleClose}
-                        className={classes.dialogButtonRight}
+                        onClick={() => {
+                          this.handleClose();
+                          this.handleSend();
+                        }}
+                        className={
+                          this.state.darkMode
+                            ? classes.dialogButtonRightLight
+                            : classes.dialogButtonRight
+                        }
                         type="submit"
                         value="Send"
                       >
                         Send
                       </Button>
-                    </DialogActions>
+                    </div>
                   </form>
-                </Dialog>
-              </p>
-              <div
-                className={
-                  this.state.darkMode
-                    ? classes.socialIconsContainerLight
-                    : classes.socialIconsContainer
-                }
-              >
-                <div className={classes.linkedinSocialIconContainer}>
-                  <a
-                    href="https://www.linkedin.com/in/brunoreyes/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      this.state.darkMode
-                        ? classes.hrefLinkLight
-                        : classes.hrefLink
-                    }
-                  >
-                    <LinkedInIcon className={classes.linkedinSocialIcons} />
-                  </a>
+                  <script
+                    data-cfasync="false"
+                    type="text/javascript"
+                    src="formSubmissionHandler.js"
+                  ></script>
                 </div>
-                <div>
-                  <a
-                    href="https://medium.com/@bruno619reyes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      this.state.darkMode
-                        ? classes.hrefLinkLight
-                        : classes.hrefLink
-                    }
-                  >
-                    <img
-                      src="https://tinyurl.com/yx96xdko"
-                      alt="medium logo"
-                      className={classes.mediumIcon}
-                    ></img>
-                  </a>
-                </div>
-                <div>
-                  {' '}
-                  <a
-                    href="https://github.com/brunoreyes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      this.state.darkMode
-                        ? classes.hrefLinkLight
-                        : classes.hrefLink
-                    }
-                  >
-                    <GitHubIcon className={classes.githubSocialIcons} />
-                  </a>
-                </div>
-                <div>
-                  {this.state.darkMode ? (
-                    <WbSunnyIcon
-                      onClick={this.toggleDarkMode}
-                      className={classes.darkModeIcon}
-                    />
-                  ) : (
-                    <Brightness3Icon
-                      onClick={this.toggleDarkMode}
-                      className={classes.darkModeIcon}
-                    />
-                  )}
-                </div>
-              </div>{' '}
+              </div>
             </Fade>
           </Grid>
-          <Grid
-            item
-            className={classes.contentRight}
-            xs={12}
-            sm={12}
-            md={6}
-            lg={6}
-            xl={8}
-          ></Grid>
+          {this.state.messageMode ? (
+            <></>
+          ) : (
+            <Grid
+              item
+              className={classes.contentRight}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={8}
+            ></Grid>
+          )}
           {/* <Grid
             item
             className={classes.contentRight}

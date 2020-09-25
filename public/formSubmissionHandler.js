@@ -1,10 +1,13 @@
 (function () {
+  console.log('in formSubmission handler');
+  // formHandler = () => {
   // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
     var honeypot;
 
     var fields = Object.keys(elements)
+
       .filter(function (k) {
         if (elements[k].name === 'honeypot') {
           honeypot = elements[k].value;
@@ -70,14 +73,15 @@
     xhr.open('POST', url);
     // xhr.withCredentials = true;
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    console.log('in disableAllButtons');
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         form.reset();
-        var formElements = form.querySelector('.form-elements');
+        var formElements = form.querySelector('#form-elements');
         if (formElements) {
           formElements.style.display = 'none'; // hide form
         }
-        var thankYouMessage = form.querySelector('.thankyou_message');
+        var thankYouMessage = form.querySelector('#thankyou_message');
         if (thankYouMessage) {
           thankYouMessage.style.display = 'block';
         }
@@ -107,4 +111,5 @@
       buttons[i].disabled = true;
     }
   }
+  // };
 })();

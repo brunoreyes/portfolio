@@ -1,81 +1,105 @@
-import React from 'react';
-import { Button, FormControl, TextField } from '@material-ui/core';
-import './Form.css';
+// import React, { Component } from 'react';
+// import {
+//   Button,
+//   // FormControl
+//   withStyles,
+//   TextField,
+// } from '@material-ui/core';
+// import './Form.css';
+// import styles from '../themes/homeTheme';
 
-export const Form = ({ onSubmit }) => {
-  return (
-    <FormControl
-      className="form-controller"
-      onSubmit={onSubmit}
-      // action={mailto: bruno619reyes@gmail.com}
-    >
-      {/* <div className="form-group">
-        <InputLabel className="nameLabel" htmlFor="name">
-          Name
-        </InputLabel>
-        <Input className="form-control" id="name" />
-      </div>
-      <div className="form-group">
-        <InputLabel id="emailLabel" htmlFor="email">
-          Email address
-        </InputLabel> */}
+// class HomePage extends Component {
+//   render() {
+//     const { classes } = this.props;
+//     return (
+//       <>
+//         <form
+//           onSubmit={this.sendEmail}
+//           className="gform pure-form pure-form-stacked"
+//           method="POST"
+//           data-email="bruno619reyes@gmail.com"
+//           action="https://script.google.com/macros/s/AKfycbxtcbHlRFTg6H0rcFU2dNnHZNdyabfR3uKLE7Tv06TyA71Cy6Y/exec"
+//         >
+//           {' '}
+//           <span className={classes.dialogMessage}>Let's Chat</span>
+//           <div className="form-elements" id="form-elements">
+//             <TextField
+//               autoFocus
+//               margin="dense"
+//               label={
+//                 <span className={classes.dialogLabels}>Email Address</span>
+//               }
+//               name="email"
+//               id="email"
+//               type="email"
+//               fullWidth
+//               variant="outlined"
+//               className="pure-group"
+//             />
+//             <TextField
+//               autoFocus
+//               margin="dense"
+//               label={<span className={classes.dialogLabels}>Name</span>}
+//               id="name"
+//               name="name"
+//               type="text"
+//               fullWidth
+//               variant="outlined"
+//               className="pure-group"
+//             />
+//             <TextField
+//               autoFocus
+//               variant="outlined"
+//               margin="dense"
+//               label={<span className={classes.dialogLabels}>Message</span>}
+//               name="message"
+//               id="message"
+//               type="text"
+//               fullWidth
+//               multiline
+//               rows={4}
+//               className="pure-group"
+//             />{' '}
+//             <input
+//               id="honeypot"
+//               type="text"
+//               name="honeypot"
+//               className="pure-group honeypot-field"
+//               hidden
+//             />
+//             {/* {JSON.stringify(this.props.task.id)} */}
+//             <div
+//               style={{ display: 'none' }}
+//               id="thankyou_message"
+//               className="thankyou_message"
+//             >
+//               <h2>
+//                 <em>Thanks</em> for contacting us! We will get back to you soon!
+//               </h2>
+//             </div>
+//           </div>
+//           {/* </DialogContent> */}
+//           {/* <DialogActions> */}
+//           <Button onClick={this.handleClose} className={classes.dialogButton}>
+//             Cancel
+//           </Button>
+//           <button
+//             // onClick={this.handleClose}
+//             className={classes.dialogButtonRight}
+//             type="submit"
+//             value="Send"
+//           >
+//             Send
+//           </button>
+//         </form>
+//         <script
+//           data-cfasync="false"
+//           type="text/javascript"
+//           src="formSubmissionHandler.js"
+//         ></script>
+//       </>
+//     );
+//   }
+// }
 
-      {/* <Input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="name@example.com"
-        /> */}
-      <h3 className="form-header">Let's Chat</h3>
-
-      <div className="form-group">
-        <TextField
-          label="Name"
-          variant="outlined"
-          type="email"
-          className="form-control"
-          id="email"
-        />
-      </div>
-      <div className="form-group">
-        <TextField
-          label="Email Address"
-          variant="outlined"
-          type="email"
-          className="form-control"
-          id="email"
-        />
-      </div>
-      <div className="form-group">
-        <TextField
-          label="Subject"
-          variant="outlined"
-          type="email"
-          className="form-control"
-          id="Subject"
-        />
-      </div>
-      <div className="form-group">
-        <TextField
-          label="Message"
-          variant="outlined"
-          type="email"
-          className="form-control"
-          id="Message"
-          multiline
-          rowsMax={4}
-        />
-      </div>
-      <div className="form-group">
-        <Button
-          className="form-control btn btn-primary"
-          variant="contained"
-          type="submit"
-        >
-          Send Message
-        </Button>
-      </div>
-    </FormControl>
-  );
-};
-export default Form;
+// export default withStyles(styles)(HomePage);
