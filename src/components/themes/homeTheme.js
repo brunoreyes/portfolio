@@ -15,7 +15,7 @@ const styles = (theme) => ({
   darkMode: {
     backgroundColor: '#262a30',
     transition: '.5s',
-    // height: '100vh',
+    height: '100vh',
   },
   lightMode: {
     backgroundColor: 'white',

@@ -144,7 +144,7 @@ class HomePage extends Component {
                     }
                   >
                     {/* I uploaded images via the images folder and accessed their links through Github */}
-                    Hola, {window.screen.width > 390 ? <></> : <br></br>}I'm
+                    Hola, {window.screen.width > 425 ? <></> : <br></br>}I'm
                     Bruno.{' '}
                   </h1>
                   <p
