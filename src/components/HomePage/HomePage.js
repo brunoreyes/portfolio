@@ -335,11 +335,14 @@ class HomePage extends Component {
                           this.state.darkMode
                             ? {
                                 classes: {
+                                  input: classes.inputLight,
+
                                   notchedOutline: classes.notchedOutlineLight,
                                 },
                               }
                             : {
                                 classes: {
+                                  input: classes.input,
                                   notchedOutline: classes.notchedOutline,
                                 },
                               }
@@ -369,11 +372,13 @@ class HomePage extends Component {
                           this.state.darkMode
                             ? {
                                 classes: {
+                                  input: classes.inputLight,
                                   notchedOutline: classes.notchedOutlineLight,
                                 },
                               }
                             : {
                                 classes: {
+                                  input: classes.input,
                                   notchedOutline: classes.notchedOutline,
                                 },
                               }
@@ -405,11 +410,13 @@ class HomePage extends Component {
                           this.state.darkMode
                             ? {
                                 classes: {
+                                  input: classes.inputLight,
                                   notchedOutline: classes.notchedOutlineLight,
                                 },
                               }
                             : {
                                 classes: {
+                                  input: classes.input,
                                   notchedOutline: classes.notchedOutline,
                                 },
                               }

@@ -568,5 +568,19 @@ const styles = (theme) => ({
     borderWidth: '2px',
     borderColor: 'white !important',
   },
+  inputLight: {
+    color: 'white',
+    font: '400 100% Montserrat, sans-serif',
+    '&:focus': {
+      backgroundColor: 'transparent',
+    },
+  },
+  input: {
+    color: '#252525',
+    font: '400 100% Montserrat, sans-serif',
+    '&:focus': {
+      backgroundColor: 'transparent',
+    },
+  },
 });
 export default styles;
