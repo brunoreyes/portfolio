@@ -15,6 +15,11 @@ const styles = (theme) => ({
   darkMode: {
     backgroundColor: '#262a30',
     transition: '.5s',
+    // height: '100vh',
+  },
+  darkModeMessage: {
+    backgroundColor: '#262a30',
+    transition: '.5s',
     height: '100vh',
   },
   lightMode: {
@@ -526,7 +531,7 @@ const styles = (theme) => ({
     // padding: '7px 12px 7px 12px',
     marginTop: '30%',
     marginLeft: '10%',
-    marginBottom: '31%',
+    marginBottom: '30%',
     // left: '50%',
     // right: '50%',
     width: '80%',

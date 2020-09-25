@@ -117,7 +117,13 @@ class HomePage extends Component {
         <Grid
           container
           justify="space-around"
-          className={this.state.darkMode ? classes.darkMode : classes.lightMode}
+          className={
+            this.state.darkMode && this.state.messageMode
+              ? classes.darkModeMessage
+              : this.state.darkMode
+              ? classes.darkMode
+              : classes.lightMode
+          }
           spacing={0}
         >
           <Grid
