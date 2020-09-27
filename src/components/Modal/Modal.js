@@ -190,3 +190,82 @@
                   ></script>
                 </Dialog>{' '} */
 }
+
+{
+  /* <GridListTile className={classes.gridListTile}>
+                    <div className={classes.projectContainerTwo}> */
+}
+{
+  (' ');
+}
+{
+  /* <Paper elevation={3} className={classes.projectPaper}> */
+}
+{
+  /* <h3 className={classes.projectTitle}>
+                      Server-Side Calculator
+                    </h3>
+                    <div className={classes.imageTextContainer}>
+                      <img
+                        className={classes.projectPicture}
+                        src="https://tinyurl.com/yyu4pp2p"
+                        alt="Server-Side Calculator"
+                      ></img>
+                      <div className={classes.overlay}>
+                        <a
+                          href="https://github.com/brunoreyes/TODO-app"
+                          target="_blank"
+                          alt="TODO app"
+                          rel="noopener noreferrer"
+                          className={classes.hrefLink}
+                        >
+                          {' '}
+                          <div className={classes.imageText}>
+                            View Project On
+                            <GitHubIcon className={classes.projectSocialIcon} />
+                          </div>
+                        </a>
+                      </div>
+                      {/* <p className={classes.projectDescription}>
+                          Spanish for 'all', TODO is an application that
+                          allows users to manage all of their tasks,
+                          reminders, ideas, and memories.
+                        </p> */
+}
+{
+  /* </div> */
+}
+{
+  /* </Paper> */
+}
+{
+  /* </div>
+                </GridListTile>
+
+                <GridListTile cols={1}>
+                  <div className={classes.projectContainerTwo}>
+                    <img
+                      className={classes.projectPicture}
+                      src="https://tinyurl.com/yyu4pp2p"
+                      alt="Server-Side Calculator"
+                    ></img> */
+}
+{
+  /* </Paper> */
+}
+{
+  /* </div>
+                </GridListTile>
+                <GridListTile>
+                  <div className={classes.projectContainerThree}>
+                    <img
+                      className={classes.projectPicture}
+                      src="https://tinyurl.com/yyd7ffm7"
+                      alt="Server-Side Calculator"
+                    ></img>
+                    {/* </Paper> */
+}
+{
+  /* </div>
+                  </GridListTile> */
+}

@@ -5,15 +5,16 @@ const styles = (theme) => ({
   },
   darkModeRoot: {
     flexGrow: 1,
-    backgroundColor: '#262a30',
+    backgroundColor: '#252525',
     height: '100%',
   },
   content: {
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },
+  emptyRight: { width: '100%' },
   darkMode: {
-    backgroundColor: '#262a30',
+    backgroundColor: '#252525',
     transition: '.5s',
     // height: '100vh',
   },
@@ -29,24 +30,25 @@ const styles = (theme) => ({
   introduction: {
     'text-align': 'left',
     color: '#262a30',
-    font: '600 270% Montserrat, sans-serif',
-    padding: '0px 5% 0px 5%',
-    margin: '4% 0% 0% 0%',
+    font: '500 380% Montserrat, sans-serif',
+    padding: '0px 4% 0px 4%',
+    margin: '8% 0% 0% 0%',
     transition: '.5s',
   },
   introductionLight: {
     'text-align': 'left',
     color: 'white',
-    font: '600 270% Montserrat, sans-serif',
-    padding: '0px 5% 0px 5%',
-    margin: '4% 0% 0% 0%',
+    font: '500 380% Montserrat, sans-serif',
+    // font: '600 270% Montserrat, sans-serif',
+    padding: '0px 4% 0px 4%',
+    margin: '8% 0% 0% 0%',
     transition: '.5s',
   },
   story: {
     color: '#262a30',
-    margin: '-5% 0% 1% 0%',
-    font: '400 130% Hind, sans-serif',
-    padding: '0px 3% 0px 6%',
+    margin: '-3% 0% 1% 0%',
+    font: '400 140% Hind, sans-serif',
+    padding: '0px 5% 0px 5%',
     'text-align': 'left',
     transition: '.5s',
     'line-height': 1.3,
@@ -54,8 +56,8 @@ const styles = (theme) => ({
   storyLight: {
     color: 'white',
     margin: '-5% 0% 1% 0%',
-    font: '400 130% Hind, sans-serif',
-    padding: '0px 3% 0px 6%',
+    font: '400 140% Hind, sans-serif',
+    padding: '0px 5% 0px 5%',
     'text-align': 'left',
     transition: '.5s',
     'line-height': 1.3,
@@ -94,7 +96,27 @@ const styles = (theme) => ({
       transition: '.4s',
       color: 'white',
       backgroundColor: '#252525',
-      'box-shadow': ' 0px 0px 0px 0px white',
+      // 'box-shadow': ' 0px 0px 0px 0px white',
+      // 'box-shadow': '0px 1px 6px 0px #252525',
+    },
+  },
+  projectsButtonRight: {
+    padding: '3% 4% 3% 4%',
+    margin: '6% 0% 4% 2%',
+    'border-radius': 5,
+    'box-shadow': ' 0px 0px 0px 0px white',
+    color: '#252525',
+    border: '#252525 solid 2px',
+    font: '600 90% Montserrat, sans-serif',
+    'text-transform': 'capitalize',
+    backgroundColor: 'white',
+    transition: '.4s',
+    '&:hover': {
+      transition: '.4s',
+      color: 'white',
+      backgroundColor: '#252525',
+      // 'box-shadow': ' 0px 0px 0px 0px white',
+      // 'box-shadow': '0px 1px 6px 0px #252525',
     },
   },
   projectsButtonLight: {
@@ -129,14 +151,10 @@ const styles = (theme) => ({
     margin: '8% 0% 8% 0%',
   },
   // formContainer: { padding: '2% 40% 2% 40%', margin: '0% 30% 2% 30%' },
-  dialogButtonContainer: {
-    // float: 'right',
-    // margin: '1% 0% 2% 45%',
-    // left: '63.5%',
-    // position: 'relative',
+  formButtonContainer: {
     'text-align': 'right',
   },
-  dialogButton: {
+  formButton: {
     padding: '2% 4% 2% 4%',
     margin: '1% 2% 2% 0%',
     'border-radius': 3,
@@ -154,25 +172,8 @@ const styles = (theme) => ({
       'box-shadow': ' 0px 0px 0px 0px white',
     },
   },
-  dialogButtonRight: {
-    padding: '2% 4% 2% 4%',
-    margin: '1% 0% 2% 0%',
-    'border-radius': 3,
-    'box-shadow': ' 0px 0px 0px 0px white',
-    color: '#252525',
-    border: '#252525 solid 2px',
-    font: '700 100% Montserrat, sans-serif',
-    'text-transform': 'capitalize',
-    backgroundColor: 'white',
-    transition: '.4s',
-    '&:hover': {
-      transition: '.4s',
-      color: 'white',
-      backgroundColor: '#252525',
-      'box-shadow': ' 0px 0px 0px 0px white',
-    },
-  },
-  dialogButtonLight: {
+
+  formButtonLight: {
     padding: '2% 4% 2% 4%',
     margin: '1% 2% 2% 0%',
     'border-radius': 3,
@@ -190,7 +191,25 @@ const styles = (theme) => ({
       'box-shadow': ' 0px 0px 0px 0px white',
     },
   },
-  dialogButtonRightLight: {
+  formButtonRight: {
+    padding: '2% 4% 2% 4%',
+    margin: '1% 0% 2% 0%',
+    'border-radius': 3,
+    'box-shadow': ' 0px 0px 0px 0px white',
+    color: '#252525',
+    border: '#252525 solid 2px',
+    font: '700 100% Montserrat, sans-serif',
+    'text-transform': 'capitalize',
+    backgroundColor: 'white',
+    transition: '.4s',
+    '&:hover': {
+      transition: '.4s',
+      color: 'white',
+      backgroundColor: '#252525',
+      'box-shadow': ' 0px 0px 0px 0px white',
+    },
+  },
+  formButtonRightLight: {
     padding: '2% 4% 2% 4%',
     margin: '1% 0% 2% 0%',
     'border-radius': 3,
@@ -210,7 +229,7 @@ const styles = (theme) => ({
   },
   socialIconsContainer: {
     color: '#252525',
-    margin: '3% 5% 5.5% 6%',
+    margin: '3% 5% 5.5% 4%',
     padding: '0px auto 0% auto',
     display: 'flex',
     transition: '.5s',
@@ -230,7 +249,7 @@ const styles = (theme) => ({
     color: 'white',
     // width: 'fit-content',
     // height: '30px',
-    margin: '3% 5% 5.5% 6%',
+    margin: '3% 5% 5.5% 4%',
     padding: '0px auto 0% auto',
     // bottom: 10,
     display: 'flex',
@@ -268,23 +287,30 @@ const styles = (theme) => ({
     display: 'inline-block',
     transform: 'rotate(45deg)',
   },
-  profilePicture: {
-    width: '14%',
-    'border-radius': 5,
-    // 'text-align': 'left',
-    // border: '#252525 solid 3px',
-    // 'box-shadow': ' 5px 5px 5px -5px #252525',
-    margin: '0px 0px .7px 0px',
-    transition: '.5s',
-  },
+  // profilePicture: {
+  //   width: '12%',
+  //   'border-radius': 5,
+  //   // margin: '0px 0px .7px 0px',
+  //   margin: 'auto',
+  //   transition: '.5s',
+  // },
   logoPicture: {
-    width: '14%',
-    margin: '0px 0px 0px 0px',
-    'border-radius': '5px',
+    width: '15%',
+    'border-radius': 5,
+    margin: '0% 0% -4% 1%',
+    // 'text-align': 'center',
     transition: '.5s',
-    '&:hover': {
-      filter: 'none',
-    },
+    'box-shadow': '-1px 1px 36px -16px rgba(0,0,0,1)',
+  },
+  logoPictureLight: {
+    width: '13%',
+    'border-radius': 5,
+    // border: '#fff solid 7px',
+    // margin: '10% 40% 10% 40%',
+    // 'text-align': 'center',
+    transition: '.5s',
+
+    'box-shadow': ' -1px 1px 39px -17px rgba(255,255,255,1)',
   },
   projectsHeader: {
     color: '#262a30',
@@ -305,26 +331,113 @@ const styles = (theme) => ({
     margin: '70px 0px 20px 0px',
     padding: '10px 20px 0px 20px',
   },
+  testTile: {
+    margin: '70px 20px 0px 20px',
+    padding: '10px 10px 10px 10px',
+    position: 'relative',
+    'max-width': '300px',
+    '&:hover': {
+      // 'box-shadow': '1px 5px 25px -10px rgba(0,0,0,0.3);',
+    },
+  },
+
+  imageTextContainer: {
+    background: '#252525',
+    color: 'white',
+    'border-radius': '5px',
+    position: 'absolute',
+    bottom: 12,
+    width: '100%',
+    transition: '.5s ease',
+    opacity: 0,
+    height: '88%',
+    '&:hover': {
+      opacity: 1,
+    },
+  },
+  projectPictureTest: {
+    width: '107%',
+    'border-radius': '3px',
+    transition: '.5s',
+    // 'box-shadow': '1px 5px 25px -10px rgba(0,0,0,0.3);',
+    // background: 'rgb(0, 0, 0)',
+    '&:hover': {
+      // 'box-shadow': '0px 0px 0px 0px rgba(0,0,0,0);',
+    },
+  },
+  imageTextContainerIcon: {
+    'font-size': '40px',
+    marginTop: '3%',
+    marginLeft: '8%',
+  },
+  imageTextContainerTitle: {
+    font: '600 120% Montserrat, sans-serif',
+    marginTop: '5.5%',
+    marginLeft: '2%',
+  },
+  imageTextContainerDescription: {
+    // marginLeft: '2%',
+    font: '500 100% Hind, sans-serif',
+    borderTop: '#dbdbdb solid 1px',
+    padding: '10px 0px 0px 0px',
+    margin: '1% 8% 0 9%',
+  },
+  imageText: {
+    display: 'flex',
+  },
+  projectButtonContainerTest: {
+    margin: '-2.5% 0% 5% 7.5%',
+    width: '100%',
+    // display: 'flex',
+  },
+  buttonTest: {
+    position: 'relative',
+    padding: '4% 7% 4% 7%',
+    'border-radius': 5,
+    margin: '1% 1% 2% 1%',
+    'text-transform': 'capitalize',
+    color: '#252525',
+    border: '#252525 solid 2px',
+    backgroundColor: 'white',
+    transition: '.5s',
+    'box-shadow': '0px 0px 0px 0px',
+    // display: 'flex',
+    '&:hover': {
+      transition: '.5s',
+      'box-shadow': '0px 0px 0px 0px',
+      color: 'white',
+      backgroundColor: '#252525',
+    },
+  },
+  buttonText: {
+    font: '600 120% Montserrat, sans-serif',
+  },
+  herokuIcon: {
+    margin: '0% 1% -2% 1%',
+    float: 'right',
+  },
   projectContainerTwo: {
     margin: '-35px 0px 40px 0px',
     padding: '20px 20px 0px 20px',
   },
   projectContainerThree: {
-    margin: '-40px 0px 20px 0px',
     padding: '10px 20px 0px 20px',
   },
 
   projectPicture: {
     width: '100%',
+    display: 'block',
     'border-radius': '3px',
     '&:hover': {
       'box-shadow': '0px 4px 6px 0px',
     },
     'box-shadow': '0px 4px 6px 0px',
     transition: '.5s',
-    // position: 'absolute',
-    // 'z-index': 999,
   },
+
+  // overlay {
+
+  // }
   projectPictureLight: {
     width: '100%',
     'border-radius': '3px',
@@ -335,12 +448,19 @@ const styles = (theme) => ({
     transition: '.5s',
   },
   projectPictureMobile: {
-    // border: '#252525 solid .25px',
-    'box-shadow': '0px 4px 6px 0px',
-    'border-radius': '3px',
-    width: '50%',
+    // border: '#dbdbdb solid 2px',
+    padding: '2px',
+    //
+    'border-radius': '5px',
+    filter: 'grayscale(100%)',
+    // 'box-shadow': '1px 5px 28px -20px rgba(0,0,0,0.3);',
+    width: '60%',
     '&:hover': {
-      'box-shadow': '0px 4px 6px 0px',
+      'box-shadow': '1px 5px 25px -10px rgba(0,0,0,0.3);',
+      // border: '#fff solid 2px',
+      // 'box-shadow': '1px 46px 27px -21px rgba(0,0,0,0.3);',
+      width: '61%',
+      filter: 'grayscale(0%)',
     },
     transition: '.5s',
     // position: 'absolute',
@@ -348,7 +468,8 @@ const styles = (theme) => ({
   projectPictureLightMobile: {
     'border-radius': '3px',
     width: '50%',
-    'box-shadow': '0px 1px 6px 0px #fff',
+
+    'box-shadow': '0px 1px 3px 0px #fff',
     '&:hover': {
       'box-shadow': '0px 1px 6px 0px #fff',
     },
@@ -362,7 +483,7 @@ const styles = (theme) => ({
     'text-decoration': 'none',
     color: 'white',
   },
-  projectSocialIcon: { 'font-size': '35px', padding: '1px 0px 1px 0px' },
+
   projectTitle: {
     font: '600 22px Montserrat, sans-serif',
     margin: '0px 0px 0px 0px',
@@ -417,15 +538,6 @@ const styles = (theme) => ({
     color: 'white',
     transition: '.5s',
   },
-  //   projectPaper: {
-  //     'border-radius': '0px',
-  //     '&:hover': {
-  //       opacity: 1,
-  //       backgroundColor: 'white',
-  //     },
-  //     'overflow-y': 'hidden',
-  //     width: 'fit-content',
-  //   },
 
   button: {
     'text-align': 'center',
@@ -467,7 +579,6 @@ const styles = (theme) => ({
       backgroundColor: '#34a1fd',
     },
   },
-  //   buttonText: { margin: '-10px' },
 
   GridListRoot: {
     display: 'grid',
@@ -517,23 +628,15 @@ const styles = (theme) => ({
       // boxShadow: 'inset 0 0 6px #000',
       // border: '#252525 solid 1px',
       backgroundColor: '#000',
-      // 'border-radius': '5px',
     },
     '&::-webkit-scrollbar-thumb': {
       backgroundColor: 'white',
-      // 'border-radius': '5px',
     },
   },
   form: {
-    // margin: '20%',
-    // 'text-align': 'center',
-    // position: 'relative',
-    // padding: '7px 12px 7px 12px',
     marginTop: '30%',
     marginLeft: '10%',
     marginBottom: '30%',
-    // left: '50%',
-    // right: '50%',
     width: '80%',
     color: '#252525',
   },
@@ -544,18 +647,18 @@ const styles = (theme) => ({
   },
   cover: { width: 158 },
 
-  dialogLabels: { font: '500 100% Montserrat, sans-serif', color: '#252525' },
-  dialogLabelsLight: {
+  formLabels: { font: '500 100% Montserrat, sans-serif', color: '#252525' },
+  formLabelsLight: {
     font: '500 100% Montserrat, sans-serif',
     color: 'white',
   },
-  dialogTitleLight: {
+  formTitleLight: {
     // padding: '0px 5% 0px 5%',
     margin: '0% 10% -2% 1%',
     font: '600 230% Montserrat, sans-serif',
     color: 'white',
   },
-  dialogTitle: {
+  formTitle: {
     // padding: '0px 5% 0px 5%',
     margin: '0% 10% -2% 1%',
     font: '600 230% Montserrat, sans-serif',
