@@ -43,7 +43,7 @@ const projects = [
   },
   {
     value: 3,
-    title: 'Data Metrika',
+    title: 'DATA METRIKA',
     image: ' images/dataM.png',
     description:
       'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
@@ -52,7 +52,7 @@ const projects = [
   },
   {
     value: 4,
-    title: 'Amare',
+    title: 'AMARE',
     image: ' images/amare.png',
     description:
       'A complete website redesign for Amare, a watch manufacturer that wanted to sell minimalistic luxury products at an affordable price.',
