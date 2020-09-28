@@ -41,6 +41,24 @@ const projects = [
     demoLink: '',
     codeLink: 'https://github.com/brunoreyes/TODO-app',
   },
+  {
+    value: 3,
+    title: 'Data Metrika',
+    image: ' images/dataM.png',
+    description:
+      'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
+    demoLink: '',
+    codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
+  },
+  {
+    value: 4,
+    title: 'Amare',
+    image: ' images/amare.png',
+    description:
+      'A complete website redesign for Amare, a watch manufacturer that wanted to sell minimalistic luxury products at an affordable price.',
+    demoLink: 'https://invis.io/5DNU9QWEX2U#/283373278_HOME',
+    codeLink: '',
+  },
   // {
   //   value: 3,
   //   title: 'MoView',
