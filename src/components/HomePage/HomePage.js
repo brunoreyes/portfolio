@@ -41,22 +41,22 @@ const projects = [
     demoLink: '',
     codeLink: 'https://github.com/brunoreyes/TODO-app',
   },
-  {
-    value: 3,
-    title: 'MoView',
-    image: ' images/unnamed.png',
-    description: 'Currently Under Maintenance',
-    demoLink: '',
-    codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
-  },
-  {
-    value: 4,
-    title: 'Pizza Parlor',
-    image: ' images/unnamed.png',
-    description: 'Currently Under Maintenance',
-    demoLink: '',
-    codeLink: '',
-  },
+  // {
+  //   value: 3,
+  //   title: 'MoView',
+  //   image: ' images/unnamed.png',
+  //   description: 'Currently Under Maintenance',
+  //   demoLink: '',
+  //   codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
+  // },
+  // {
+  //   value: 4,
+  //   title: 'Pizza Parlor',
+  //   image: ' images/unnamed.png',
+  //   description: 'Currently Under Maintenance',
+  //   demoLink: '',
+  //   codeLink: '',
+  // },
 ];
 
 class HomePage extends Component {
@@ -73,27 +73,17 @@ class HomePage extends Component {
       darkMode: !this.state.darkMode,
     });
   };
-
-  turnOffDarkMode = () => {
-    this.setState({
-      darkMode: false,
-    });
-  };
-
   handleMessageToggle = () => {
     this.setState({ messageMode: !this.state.messageMode });
   };
   handleProjectToggle = () => {
     this.setState({ projectMode: !this.state.projectMode });
   };
-
   handleClose = () => {
     this.setState({ messageMode: false });
-    console.log('cancel');
   };
   handleSend = () => {
     this.setState({ sentMode: true });
-    console.log('sent');
   };
 
   render() {
@@ -101,7 +91,6 @@ class HomePage extends Component {
 
     return (
       <div
-        // className={classes.root}
         className={this.state.darkMode ? classes.darkModeRoot : classes.root}
       >
         <Grid
@@ -117,7 +106,6 @@ class HomePage extends Component {
           spacing={0}
         >
           <Grid
-            className={classes.content}
             item
             xs={12}
             sm={12}
@@ -126,7 +114,6 @@ class HomePage extends Component {
             xl={this.state.projectMode ? 12 : 4}
             alignItems="center"
             justify="center"
-            // spacing={0}
             align={this.state.projectMode ? 'center' : <></>}
           >
             {' '}
@@ -148,7 +135,6 @@ class HomePage extends Component {
                     {this.state.darkMode ? (
                       <img
                         alt="Bruno Reyes"
-                        // src="images/bruno_9452.jpg"
                         src="images/brLogo.png"
                         className={classes.logoPictureLight}
                         onClick={this.toggleDarkMode}
@@ -158,11 +144,10 @@ class HomePage extends Component {
                         alt="Bruno Reyes Logo"
                         className={classes.logoPicture}
                         src="images/bruno_9452.jpg"
-                        // src="https://tinyurl.com/y5aqqxzj"
                         onClick={this.toggleDarkMode}
                       ></img>
                     )}{' '}
-                    {/* I uploaded images via the images folder and accessed their links through Github */}
+                    {window.screen.width > 425 ? <></> : <br></br>}
                     Hola, {window.screen.width > 425 ? <></> : <br></br>}I'm
                     Bruno.{' '}
                   </h1>{' '}
@@ -230,7 +215,6 @@ class HomePage extends Component {
                         Say Hola
                       </Button>
                     )}
-                    {/* <br></br> */}
                     <Button
                       className={
                         this.state.darkMode
@@ -239,7 +223,7 @@ class HomePage extends Component {
                       }
                       onClick={this.handleProjectToggle}
                     >
-                      See Apps
+                      Projects
                     </Button>
                   </p>
                   <div
@@ -351,7 +335,6 @@ class HomePage extends Component {
                         type="email"
                         fullWidth
                         variant="outlined"
-                        // className="pure-group"
                         InputProps={
                           this.state.darkMode
                             ? {
@@ -388,7 +371,6 @@ class HomePage extends Component {
                         type="text"
                         fullWidth
                         variant="outlined"
-                        className="pure-group"
                         InputProps={
                           this.state.darkMode
                             ? {
@@ -426,7 +408,6 @@ class HomePage extends Component {
                         fullWidth
                         multiline
                         rows={4}
-                        className="pure-group"
                         InputProps={
                           this.state.darkMode
                             ? {
@@ -447,7 +428,7 @@ class HomePage extends Component {
                         id="honeypot"
                         type="text"
                         name="honeypot"
-                        className="pure-group honeypot-field"
+                        className="honeypot-field"
                         hidden
                       />
                     </div>
@@ -489,7 +470,7 @@ class HomePage extends Component {
               <div style={this.state.projectMode ? {} : { display: 'none' }}>
                 <div>
                   {' '}
-                  <div className={classes.GridListRootTest}>
+                  <div>
                     <h1
                       className={
                         this.state.darkMode
@@ -501,18 +482,23 @@ class HomePage extends Component {
                     </h1>
                     <GridList
                       cols={window.screen.width < 600 ? 1 : 2}
-                      // cols={3}
                       cellHeight={'12%'}
                       className={
                         this.state.darkMode
                           ? classes.gridListLight
-                          : classes.gridListTest
+                          : classes.gridList
                       }
                     >
                       {projects.map((project) => (
-                        <GridListTile key={project.value} value={project.value}>
-                          <div className={classes.testTile}>
-                            <Card className={classes.card}>
+                        <GridListTile>
+                          <div className={classes.tile}>
+                            <Card
+                              className={
+                                this.state.darkMode
+                                  ? classes.cardLight
+                                  : classes.card
+                              }
+                            >
                               <CardActionArea
                                 className={classes.actionArea}
                                 classes={{
@@ -531,7 +517,11 @@ class HomePage extends Component {
                                 />
                                 <CardContent>
                                   <Typography
-                                    className={classes.projectTitle}
+                                    className={
+                                      this.state.darkMode
+                                        ? classes.projectTitleLight
+                                        : classes.projectTitle
+                                    }
                                     gutterBottom
                                     variant="h5"
                                     component="h2"
@@ -540,7 +530,11 @@ class HomePage extends Component {
                                   </Typography>
                                   <Typography
                                     component="p"
-                                    className={classes.projectDescription}
+                                    className={
+                                      this.state.darkMode
+                                        ? classes.projectDescriptionLight
+                                        : classes.projectDescription
+                                    }
                                   >
                                     {project.description}
                                   </Typography>
@@ -560,7 +554,11 @@ class HomePage extends Component {
                                   >
                                     <IconButton aria-label="demo">
                                       <PlayCircleFilledIcon
-                                        className={classes.projectDemoIcon}
+                                        className={
+                                          this.state.darkMode
+                                            ? classes.projectDemoIconLight
+                                            : classes.projectDemoIcon
+                                        }
                                       />
                                     </IconButton>{' '}
                                   </a>
@@ -580,7 +578,11 @@ class HomePage extends Component {
                                   >
                                     <IconButton aria-label="Share">
                                       <GitHubIcon
-                                        className={classes.projectCodeIcon}
+                                        className={
+                                          this.state.darkMode
+                                            ? classes.projectCodeIconLight
+                                            : classes.projectCodeIcon
+                                        }
                                       />
                                     </IconButton>{' '}
                                   </a>
@@ -593,29 +595,31 @@ class HomePage extends Component {
                         </GridListTile>
                       ))}
                     </GridList>
-                    <Button
-                      className={
-                        this.state.darkMode
-                          ? classes.projectsButtonLight
-                          : classes.projectIntroButton
-                      }
-                      onClick={this.handleProjectToggle}
-                    >
-                      Intro
-                    </Button>
-                    <Button
-                      className={
-                        this.state.darkMode
-                          ? classes.projectsButtonLight
-                          : classes.projectMessageButton
-                      }
-                      onClick={() => {
-                        this.handleMessageToggle();
-                        this.handleProjectToggle();
-                      }}
-                    >
-                      Say Hola
-                    </Button>
+                    <div className={classes.projectButtonsContainer}>
+                      <Button
+                        className={
+                          this.state.darkMode
+                            ? classes.projectIntroButtonLight
+                            : classes.projectIntroButton
+                        }
+                        onClick={this.handleProjectToggle}
+                      >
+                        Intro
+                      </Button>
+                      <Button
+                        className={
+                          this.state.darkMode
+                            ? classes.projectMessageButtonLight
+                            : classes.projectMessageButton
+                        }
+                        onClick={() => {
+                          this.handleMessageToggle();
+                          this.handleProjectToggle();
+                        }}
+                      >
+                        Say Hola
+                      </Button>
+                    </div>
                   </div>{' '}
                 </div>
               </div>
@@ -624,17 +628,7 @@ class HomePage extends Component {
           {this.state.messageMode || this.state.projectMode ? (
             <></>
           ) : (
-            <Grid
-              item
-              className={classes.emptyRight}
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={8}
-            >
-              <div></div>
-            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={8}></Grid>
           )}
         </Grid>
       </div>
