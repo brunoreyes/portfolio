@@ -80,7 +80,7 @@ const projects = [
 class HomePage extends Component {
   state = {
     darkMode: false,
-    messageMode: false,
+    messageMode: true,
     sentMode: false,
     projectMode: false,
   };
@@ -332,7 +332,17 @@ class HomePage extends Component {
                       }
                     >
                       Let's Chat
-                    </span>
+                    </span>{' '}
+                    <Button
+                      onClick={this.handleClose}
+                      className={
+                        this.state.darkMode
+                          ? classes.formButtonExitLight
+                          : classes.formButtonExit
+                      }
+                    >
+                      X
+                    </Button>
                     <div className="form-elements" id="form-elements">
                       <TextField
                         autoFocus
