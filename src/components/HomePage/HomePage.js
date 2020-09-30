@@ -47,8 +47,8 @@ const projects = [
     image: ' images/dataM.png',
     description:
       'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
-    demoLink: '',
-    codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
+    demoLink: 'https://www.datametrikacg.com/',
+    codeLink: '',
   },
   {
     value: 4,
