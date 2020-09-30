@@ -76,7 +76,7 @@ const projects = [
   //   codeLink: '',
   // },
 ];
-
+const darkResult = window.matchMedia('(prefers-color-scheme: dark)');
 class HomePage extends Component {
   state = {
     darkMode: false,
@@ -85,6 +85,14 @@ class HomePage extends Component {
     projectMode: false,
   };
 
+  componentDidMount() {
+    // Checking user's dark/light theme preference using variable darkResult created above
+    if (darkResult.matches === true) {
+      this.setState({ darkMode: true });
+    } else {
+      this.setState({ darkMode: false });
+    }
+  }
   toggleDarkMode = () => {
     // console.log('You clicked the preview icon');
     this.setState({
