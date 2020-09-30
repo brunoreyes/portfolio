@@ -80,7 +80,7 @@ const projects = [
 class HomePage extends Component {
   state = {
     darkMode: false,
-    messageMode: true,
+    messageMode: false,
     sentMode: false,
     projectMode: false,
   };
