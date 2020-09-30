@@ -237,6 +237,7 @@ class HomePage extends Component {
                             : classes.projectsButton
                         }
                         onClick={this.handleMessageToggle}
+                        title="Enter Messenger"
                       >
                         Say Hola
                       </Button>
@@ -270,7 +271,10 @@ class HomePage extends Component {
                             : classes.hrefLink
                         }
                       >
-                        <LinkedInIcon className={classes.linkedinSocialIcons} />
+                        <LinkedInIcon
+                          className={classes.linkedinSocialIcons}
+                          title="Bruno Reyes Linkedin Profile"
+                        />
                       </a>
                     </div>
                     <div>
@@ -288,6 +292,7 @@ class HomePage extends Component {
                           src="https://tinyurl.com/yx96xdko"
                           alt="medium logo"
                           className={classes.mediumIcon}
+                          title="Bruno Reyes Medium Profile"
                         ></img>
                       </a>
                     </div>
@@ -303,7 +308,10 @@ class HomePage extends Component {
                             : classes.hrefLink
                         }
                       >
-                        <GitHubIcon className={classes.githubSocialIcons} />
+                        <GitHubIcon
+                          className={classes.githubSocialIcons}
+                          title="Bruno Reyes Github Profile"
+                        />
                       </a>
                     </div>
                     <div>
@@ -311,11 +319,13 @@ class HomePage extends Component {
                         <WbSunnyIcon
                           onClick={this.toggleDarkMode}
                           className={classes.darkModeIcon}
+                          title="Light Mode"
                         />
                       ) : (
                         <Brightness3Icon
                           onClick={this.toggleDarkMode}
                           className={classes.darkModeIcon}
+                          title="Dark Mode"
                         />
                       )}
                     </div>
@@ -348,6 +358,7 @@ class HomePage extends Component {
                           ? classes.formButtonExitLight
                           : classes.formButtonExit
                       }
+                      title="Exit Messenger"
                     >
                       X
                     </Button>
@@ -595,6 +606,7 @@ class HomePage extends Component {
                                             ? classes.projectDemoIconLight
                                             : classes.projectDemoIcon
                                         }
+                                        title="Demo"
                                       />
                                     </IconButton>{' '}
                                   </a>
@@ -619,6 +631,7 @@ class HomePage extends Component {
                                             ? classes.projectCodeIconLight
                                             : classes.projectCodeIcon
                                         }
+                                        title="View Code"
                                       />
                                     </IconButton>{' '}
                                   </a>
