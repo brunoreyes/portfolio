@@ -26,7 +26,7 @@ const projects = [
   {
     value: 1,
     title: 'UNiQUE',
-    image: 'images/realmDesktopandMobile.png',
+    image: 'images/compressedRealmDesktopandMobile.png',
     description: `A mobile-friendly education app that allows users to engage with content, while admins
     download data and continuously modify content for users.`,
     demoLink: 'http://www.uniquerealmapp.com/',
@@ -44,7 +44,7 @@ const projects = [
   {
     value: 3,
     title: 'DATA METRIKA',
-    image: ' images/dataM.png',
+    image: ' images/compressedDataM.png',
     description:
       'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
     demoLink: 'https://www.datametrikacg.com/',
@@ -53,7 +53,7 @@ const projects = [
   {
     value: 4,
     title: 'AMARE',
-    image: ' images/amare.png',
+    image: ' images/compressedAmare.png',
     description:
       'A complete website redesign for Amare, a watch manufacturer that wanted to sell minimalistic luxury products at an affordable price.',
     demoLink: 'https://invis.io/5DNU9QWEX2U#/283373278_HOME',
@@ -161,15 +161,16 @@ class HomePage extends Component {
                     {this.state.darkMode ? (
                       <img
                         alt="Bruno Reyes"
-                        src="images/brLogo.png"
+                        // src="images/brLogo.png"
+                        src="images/compressedHeadshot.jpg"
                         className={classes.logoPictureLight}
                         onClick={this.toggleDarkMode}
                       ></img>
                     ) : (
                       <img
-                        alt="Bruno Reyes Logo"
+                        alt="Bruno Reyes"
                         className={classes.logoPicture}
-                        src="images/bruno_9452.jpg"
+                        src="images/compressedHeadshot.jpg"
                         onClick={this.toggleDarkMode}
                       ></img>
                     )}{' '}
@@ -182,7 +183,7 @@ class HomePage extends Component {
                       this.state.darkMode ? classes.storyLight : classes.story
                     }
                   >
-                    <br></br> <br></br>I'm a Mexican-American full-stack
+                    <br></br> <br></br>I am a Mexican-American full-stack
                     software developer and recent graduate of the University of
                     Minnesota and Prime Digital Academy. Prior to coding I held
                     various roles within UX for four years creating websites,
