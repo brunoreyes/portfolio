@@ -56,8 +56,17 @@ const projects = [
   },
   {
     value: 4,
+    title: 'Calculator & Log',
+    image: 'images/compressedCalculator.png',
+    description: ` A calculator inspired by Casio, that handles the standard mathematical operators (*,/,-,+), clearing out inputs, and generating an updated log of calculations. `,
+    demoLink: '',
+    codeLink: 'https://github.com/brunoreyes/jQuery-server-side-calculator-',
+    tech: 'jQuery | JavaScript | HTML | CSS | Express | Node ',
+  },
+  {
+    value: 5,
     title: 'DATA METRIKA',
-    image: ' images/compressedDataM.png',
+    image: 'images/compressedDataM.png',
     description:
       'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
     demoLink: 'https://www.datametrikacg.com/',
@@ -65,7 +74,7 @@ const projects = [
     tech: 'HTML | CSS | WordPress | DreamHost | WP Mailer ',
   },
   {
-    value: 5,
+    value: 6,
     title: 'AMARE',
     image: ' images/compressedAmare.png',
     description:
