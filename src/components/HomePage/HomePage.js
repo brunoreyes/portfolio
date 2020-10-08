@@ -31,33 +31,48 @@ const projects = [
     download data and continuously modify content for users.`,
     demoLink: 'http://www.uniquerealmapp.com/',
     codeLink: 'https://github.com/brunoreyes/UNiQUE',
+    tech:
+      'React | Sagas | Redux | CSS | Express | Node | Passport | PostgreSQL',
   },
   {
     value: 2,
+    title: 'MIVI',
+    image: 'images/mivi.png',
+    description: ` A movie app that allows users to view a list of movies and their associated genres, descriptions & trailers while Admins can edit and update all of the above! `,
+    demoLink: 'https://guarded-meadow-81558.herokuapp.com/#/',
+    codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
+    tech: 'React | Sagas | Redux | CSS | Express | Node  | PostgreSQL',
+  },
+  {
+    value: 3,
     title: 'TODO',
     image: 'images/todoIdea.png',
     description: ` In Spanish meaning "all", manages all of a user's
     tasks, reminders, ideas & memories. Users can: add, delete, edit, remind, favorite, upload & check off! `,
     demoLink: '',
     codeLink: 'https://github.com/brunoreyes/TODO-app',
+    tech:
+      'AWS S3 | React | Sagas | Redux | CSS | Express | Node | Passport | PostgreSQL',
   },
   {
-    value: 3,
+    value: 4,
     title: 'DATA METRIKA',
     image: ' images/compressedDataM.png',
     description:
       'A mobile-friendly website for a multidisciplinary consulting firm specializing in data analytics where users can contact DM or browse services and industries',
     demoLink: 'https://www.datametrikacg.com/',
     codeLink: '',
+    tech: 'HTML | CSS | WordPress | DreamHost | WP Mailer ',
   },
   {
-    value: 4,
+    value: 5,
     title: 'AMARE',
     image: ' images/compressedAmare.png',
     description:
       'A complete website redesign for Amare, a watch manufacturer that wanted to sell minimalistic luxury products at an affordable price.',
     demoLink: 'https://invis.io/5DNU9QWEX2U#/283373278_HOME',
     codeLink: '',
+    tech: 'Sketch | Invision ',
   },
   // {
   //   value: 3,
@@ -577,6 +592,15 @@ class HomePage extends Component {
                                     {project.title}
                                   </Typography>
                                   <Typography
+                                    className={
+                                      this.state.darkMode
+                                        ? classes.projectTechLight
+                                        : classes.projectTech
+                                    }
+                                  >
+                                    {project.tech}
+                                  </Typography>
+                                  <Typography
                                     component="p"
                                     className={
                                       this.state.darkMode
@@ -585,7 +609,8 @@ class HomePage extends Component {
                                     }
                                   >
                                     {project.description}
-                                  </Typography>
+                                  </Typography>{' '}
+                                  <br></br>
                                 </CardContent>
                               </CardActionArea>
                               <CardActions>
