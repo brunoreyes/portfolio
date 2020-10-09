@@ -366,7 +366,7 @@ const styles = (theme) => ({
   projectsHeaderLight: {
     color: 'white',
     font: '500 250% Montserrat, sans-serif',
-    margin: '3% 0 -1% 0',
+    margin: '2% 0 0% 0',
     transition: '.5s',
   },
 
@@ -501,10 +501,22 @@ const styles = (theme) => ({
     'justify-content': 'center',
     position: 'relative',
   },
-  // projectButtonsContainer: { display: 'flex' },
-  projectIntroButton: {
+  projectButtonsContainer: {
+    // display: 'flex',
+    // float: 'right',
+    // textAlign: 'center',
+    // position: 'absolute',
+    // // top: '50%',
+    // right: 0,
+    // marginTop: '5%',
+    // width: '150px',
+    padding: '0% 0% 7% 0%',
+    // transform: 'translateY(-50%)',
+  },
+  projectHomeButton: {
     padding: '1% 0% 1% 0%',
     margin: '0.5% 2% 2% 0%',
+    // margin: '2% 2% 0% 0%',
     width: '46%',
     // width: '94%',
     'border-radius': 5,
@@ -521,9 +533,10 @@ const styles = (theme) => ({
       backgroundColor: '#252525',
     },
   },
-  projectIntroButtonLight: {
+  projectHomeButtonLight: {
     padding: '1% 0% 1% 0%',
     margin: '0.5% 2% 2% 0%',
+    // margin: '2% 2% 0% 0%',
     width: '46%',
     // width: '94%',
     'border-radius': 5,
@@ -544,6 +557,7 @@ const styles = (theme) => ({
     padding: '1% 0% 1% 0%',
     // margin: '1% 0% 4% 4%',
     margin: '.5% 0% 2% 2%',
+    // margin: '2% 0% 0% 0%',
     width: '46%',
     // width: '94%',
     'border-radius': 5,
@@ -565,6 +579,7 @@ const styles = (theme) => ({
     padding: '1% 0% 1% 0%',
     // margin: '1% 0% 4% 4%',
     margin: '.5% 0% 2% 2%',
+    // margin: '2% 0% 0% 0%',
     width: '46%',
     // width: '94%',
     'border-radius': 5,

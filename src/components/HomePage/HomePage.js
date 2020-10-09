@@ -21,6 +21,8 @@ import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+// import HomeIcon from '@material-ui/icons/Home';
+// import EmailIcon from '@material-ui/icons/Email';
 
 const projects = [
   {
@@ -84,14 +86,6 @@ const projects = [
     tech: 'Sketch | Invision ',
   },
   // {
-  //   value: 3,
-  //   title: 'MoView',
-  //   image: ' images/unnamed.png',
-  //   description: 'Currently Under Maintenance',
-  //   demoLink: '',
-  //   codeLink: 'https://github.com/brunoreyes/movie-sagas-master',
-  // },
-  // {
   //   value: 4,
   //   title: 'Pizza Parlor',
   //   image: ' images/unnamed.png',
@@ -106,7 +100,7 @@ class HomePage extends Component {
     darkMode: false,
     messageMode: false,
     sentMode: false,
-    projectMode: false,
+    projectMode: true,
   };
 
   componentDidMount() {
@@ -543,6 +537,29 @@ class HomePage extends Component {
                 <div>
                   {' '}
                   <div>
+                    {' '}
+                    {/* <div className={classes.projectButtonsContainer}> */}
+                    {/* <IconButton aria-label="demo">
+                        <HomeIcon
+                          className={
+                            this.state.darkMode
+                              ? classes.projectDemoIconLight
+                              : classes.projectDemoIcon
+                          }
+                          title="Demo"
+                        />
+                      </IconButton>{' '}
+                      <IconButton aria-label="demo">
+                        <EmailIcon
+                          className={
+                            this.state.darkMode
+                              ? classes.projectDemoIconLight
+                              : classes.projectDemoIcon
+                          }
+                          title="Demo"
+                        />
+                      </IconButton>{' '}
+                    </div> */}
                     <h1
                       className={
                         this.state.darkMode
@@ -679,32 +696,32 @@ class HomePage extends Component {
                         </GridListTile>
                       ))}
                     </GridList>
-                    <div className={classes.projectButtonsContainer}>
-                      <Button
-                        className={
-                          this.state.darkMode
-                            ? classes.projectIntroButtonLight
-                            : classes.projectIntroButton
-                        }
-                        onClick={this.handleProjectToggle}
-                      >
-                        Intro
-                      </Button>
-                      <Button
-                        className={
-                          this.state.darkMode
-                            ? classes.projectMessageButtonLight
-                            : classes.projectMessageButton
-                        }
-                        onClick={() => {
-                          this.handleMessageToggle();
-                          this.handleProjectToggle();
-                        }}
-                      >
-                        Say Hola
-                      </Button>
-                    </div>
                   </div>{' '}
+                </div>
+                <div className={classes.projectButtonsContainer}>
+                  <Button
+                    className={
+                      this.state.darkMode
+                        ? classes.projectHomeButtonLight
+                        : classes.projectHomeButton
+                    }
+                    onClick={this.handleProjectToggle}
+                  >
+                    Home
+                  </Button>
+                  <Button
+                    className={
+                      this.state.darkMode
+                        ? classes.projectMessageButtonLight
+                        : classes.projectMessageButton
+                    }
+                    onClick={() => {
+                      this.handleMessageToggle();
+                      this.handleProjectToggle();
+                    }}
+                  >
+                    Say Hola
+                  </Button>
                 </div>
               </div>
             </Fade>
