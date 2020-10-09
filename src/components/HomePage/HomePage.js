@@ -100,7 +100,7 @@ class HomePage extends Component {
     darkMode: false,
     messageMode: false,
     sentMode: false,
-    projectMode: true,
+    projectMode: false,
   };
 
   componentDidMount() {
