@@ -86,8 +86,16 @@ const projects = [
     tech: 'Sketch | Invision ',
   },
   // {
-  //   value: 4,
+  //   value: 7,
   //   title: 'Pizza Parlor',
+  //   image: ' images/unnamed.png',
+  //   description: 'Currently Under Maintenance',
+  //   demoLink: '',
+  //   codeLink: '',
+  // },
+  // {
+  //   value: 7,
+  //   title: 'Pet Hotel',
   //   image: ' images/unnamed.png',
   //   description: 'Currently Under Maintenance',
   //   demoLink: '',
@@ -201,15 +209,14 @@ class HomePage extends Component {
                       this.state.darkMode ? classes.storyLight : classes.story
                     }
                   >
-                    <br></br> <br></br>I am a Mexican-American full-stack
-                    software developer and recent graduate of the University of
-                    Minnesota and Prime Digital Academy. Prior to coding I held
-                    various roles within UX for four years creating websites,
-                    reports, and creative content. <br></br> <br></br>I enjoy
-                    sketching out designs into apps that help engineers,
-                    designers, stakeholders, and consumers. When I'm not
-                    creating products, I like exploring and sharing ideas.{' '}
-                    <br></br> <br></br>
+                    <br></br> <br></br>I am a full-stack software developer and
+                    recent graduate of the University of Minnesota and Prime
+                    Digital Academy. Prior to coding I held various roles within
+                    UX for three years creating websites, strategy, and creative
+                    content. <br></br> <br></br>I enjoy sketching out designs
+                    into apps that help engineers, designers, stakeholders, and
+                    consumers. When I'm not creating products, I like exploring
+                    and sharing ideas. <br></br> <br></br>
                     Download my{' '}
                     {/* I have developed projects using React, Redux,
                     Sagas, Node.js, Ajax, Express, PostgreSQL, SQL, jQuery, AWS
