@@ -85,18 +85,20 @@ const projects = [
     codeLink: '',
     tech: 'Sketch | Invision ',
   },
-  // {
-  //   value: 7,
-  //   title: 'Pizza Parlor',
-  //   image: ' images/unnamed.png',
-  //   description: 'Currently Under Maintenance',
-  //   demoLink: '',
-  //   codeLink: '',
-  // },
+  {
+    value: 7,
+    title: 'Pi',
+    image: ' images/pi.png',
+    description:
+      'Pi, a pizza store web app that allows users to spin, add, and delete pizzas from their cart, input customer info, place orders and place in a ticketing line until ready.',
+    demoLink: '',
+    codeLink: 'https://github.com/brunoreyes/Pi',
+    tech: 'React | JavaScript | HTML | Sass | CSS | Express | Node ',
+  },
   // {
   //   value: 7,
   //   title: 'Pet Hotel',
-  //   image: ' images/unnamed.png',
+  //   image: ' images/unnamed.png', 1418 * 726
   //   description: 'Currently Under Maintenance',
   //   demoLink: '',
   //   codeLink: '',
