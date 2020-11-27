@@ -103,6 +103,7 @@ const projects = [
       'A budgeting tool that helps you keep track of income and expenses with a bar chart to compare the two, and pie charts to view your biggest transactions.',
     demoLink: 'http://nameless-meadow-96758.herokuapp.com/',
     codeLink: 'https://github.com/brunoreyes/react-budget-app',
+    tech: 'React | JavaScript | HTML | CSS | Node ',
   },
   // {
   //   value: 8,
@@ -111,6 +112,7 @@ const projects = [
   //   description: 'Currently Under Maintenance',
   //   demoLink: '',
   //   codeLink: '',
+  //    tech: 'React | JavaScript | HTML | Sass | CSS | Express | Node ',
   // },
 ];
 const darkResult = window.matchMedia('(prefers-color-scheme: dark)');
