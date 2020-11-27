@@ -95,9 +95,18 @@ const projects = [
     codeLink: 'https://github.com/brunoreyes/Pi',
     tech: 'React | JavaScript | HTML | Sass | CSS | Express | Node ',
   },
+  {
+    value: 8,
+    title: 'STATE',
+    image: ' images/compressedState.png',
+    description:
+      'A budgeting tool that helps you keep track of income and expenses with a bar chart to compare the two, and pie charts to view your biggest transactions.',
+    demoLink: 'http://nameless-meadow-96758.herokuapp.com/',
+    codeLink: 'https://github.com/brunoreyes/react-budget-app',
+  },
   // {
-  //   value: 7,
-  //   title: 'Pet Hotel',
+  //   value: 8,
+  //   title: 'STATE',
   //   image: ' images/unnamed.png', 1418 * 726
   //   description: 'Currently Under Maintenance',
   //   demoLink: '',
