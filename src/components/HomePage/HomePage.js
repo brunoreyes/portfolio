@@ -226,14 +226,14 @@ class HomePage extends Component {
                     recent graduate of the University of Minnesota and Prime
                     Digital Academy. Prior to coding I held various roles within
                     UX for three years creating websites, strategy, and creative
-                    content. <br></br> <br></br>I enjoy sketching out designs
-                    into apps that help engineers, designers, stakeholders, and
-                    consumers. When I'm not creating products, I like exploring
-                    and sharing ideas. <br></br> <br></br>
+                    content. I have developed projects using React, Redux,
+                    Sagas, Node.js, Ajax, Express, Java, PostgreSQL, Python,
+                    SQL, jQuery, AWS S3, and CSS. <br></br> <br></br>I enjoy
+                    sketching out designs into apps that help engineers,
+                    designers, stakeholders, and consumers. When I'm not
+                    creating products, I like exploring and sharing ideas.{' '}
+                    <br></br> <br></br>
                     Download my{' '}
-                    {/* I have developed projects using React, Redux,
-                    Sagas, Node.js, Ajax, Express, PostgreSQL, SQL, jQuery, AWS
-                    S3, and CSS.  */}
                     <a
                       href="resume-Bruno_Reyes.pdf"
                       target="_blank"
@@ -316,7 +316,8 @@ class HomePage extends Component {
                         />
                       </a>
                     </div>
-                    <div>
+                    {/* Removed Medium */}
+                    {/* <div>
                       <a
                         href="https://medium.com/@bruno619reyes"
                         target="_blank"
@@ -334,7 +335,7 @@ class HomePage extends Component {
                           title="Bruno Reyes Medium Profile"
                         ></img>
                       </a>
-                    </div>
+                    </div> */}
                     <div>
                       {' '}
                       <a
